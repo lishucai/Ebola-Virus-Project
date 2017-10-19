@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{%
+  Problem Statement \\
+  \large Core Body Temperature Estimation to Detect Ebola Virus Disease \\
+  \large CS 461, Fall 2017\\
+    }
+\author{Brian Huang}
+\date{9 October}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Currently to check for Ebola, doctors must use contact sensors such as thermometers to test for an increase in a patients core body temperature. This can be slow and potentially infect them, as well as other patients. With a large volume of patients such as the 2015 Ebola outbreak, this method is extremely inefficient and can even result in an even larger spread of the virus as the symptomatic and healthy are all held in the same room. The solution to this is to create a sensor, that uses a thermal image of the patient to detect whether or not they have contracted the virus, and then quarantine them. To do this we will construct a mathematical model that uses data taken from a thermal image, to determine whether or not a patients core body temperature is higher than normal. We are working with Medecins Sans Frontieres and the MIME Capstone Team to complete this project.
+\end{abstract}
+\newpage
+\section{Problem}
+During an Ebola outbreak there is no way to tell if a patient is symptomatic or not without coming into close contact with them. Doctors would need to take the patients core temperature either orally or tympanicly, which meant coming into close contact with a patients bodily fluids which is how the virus is spread. The temperature is measured by a contact sensor such a thermometer which can not be reused, and increase of the risk of spreading the disease.
+
+Patients waiting to be checked for symptoms also poses another major issue as the healthy and symptomatic are all grouped together in one room. Without some sort of quarantine the risk of spreading the Ebola virus increases as more and more people come in to get a checkup. Checking health patients for symptoms also wastes time and resources which reduces the overall effectiveness and efficiency of the hospital. These two problems really reduce the effectiveness of any sort of treatment for Ebola as more patients can easily be infected at hospitals and the way for detecting is slow and costs resources.
+\section{Proposed Solution}
+Our solution for these two problems is to create a mathematical model for a thermal sensor which can detect whether or not a person has Ebola by just using a thermal image. The thermal image will be obtained through a device much like a metal detector, where a person walks through an entry way and a thermal image is taken as they walk through to check whether or not their core body temperature has increased or not. Once the image is taken the patient will be directed to areas where people symptomatic with Ebola are held, or where other healthy patients are effectively quarantining sick patients.
+
+The thermal sensor will use a mathematical model constructed by taking data relating skip temperature to body temperature. This model is what will be used to determine whether a patient has contracted Ebola or if they are healthy.
+
+\section{Performance Metrics}
+Our final model should be able to predict whether or not a person has contracted Ebola just by using a thermal image of them with only a 10\% false negative rate. The analyzing of the data should also take less time than a normal check up should. The device should also be very simple to use, providing a simple yes or no to whether or not a patient is infected or not.
+
+
+\end{document}
