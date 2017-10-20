@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{%
+  Problem Statement \\
+  \large Core Body Temperature Estimation to Detect Ebola Virus Disease \\
+  \large CS 461, Fall 2017\\
+    }
+\author{Claude Maimon }
+\date{9 October}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{abstract}
+In 2015, Doctors Without Borders led the response to the Ebola Virus outbreak in West Africa. While treating patients, the doctors were put at high risk of infection. The outbreak resulted in a need for a fast diagnosis of patients arriving at the care center. For this project, we will work on a model that could save lives by estimating patient’s core body temperature without human contact. As part of a large project to fight the Ebola Virus Disease, we will design a model that will use sensors to determine whether or not a person has high body temperatures. We will work with Medecins Sans Frontieres to design and build our model. We will design the software for the project while a MIME Capstone team will design the hardware.   \end{abstract}
+\newpage
+\section{Problem}
+Medecins Sans Frontieres’s doctors work with patients that are at high risk to be exposed to the Ebola Virus Disease. They would like to minimize the exposure risk for the Ebola Virus Disease and help to stop the West Africa Ebola outbreak. In order to do that, there is a need to know if people have the Ebola Virus symptoms before allowing patients into the treatments areas. The doctors want to be able to let non-symptomized people enter the center from one entrance, and patient that have the Ebola virus symptoms in through another entrance. This approach will lower the risk of infection for both staff and public members.\par 
+Our client needs a solution that will detect individuals with Ebola symptoms without checking them with a thermometer. A Thermometer would give an accurate estimation but it will put staff at a risk of infection. There I a need for a system that will establish an estimate with no human contact. This system should work with minimal risk for the staff and the public members. The faster an individual could be diagnosed, the safer it will be for the present individuals. Moreover, there is a need for a fast diagnosis. A thermometer test can take minutes. The new test should be faster and work for many people.  \par
+People with Ebola virus have higher core body temperature. There is a need for a model that will accurately predict core body temperatures of patients arriving at the care center. Our prototype will need to use data from stand-off sensors. The data will be of a thermal camera and other selected sensors. There is a need for a model that will help estimate body core temperature by analyzing the given data.   
+
+\section{Proposed solution}
+We will design a computational model that will predict patient’s core body temperature. Our model will use data from stand-off sensors. The data will consist of skin temperature, thermal heat and more. We will learn the patterns of the data to create an accurate mathematical model that will accurately predict an individual body core temperature. The higher the core body temperature, the higher the risk of an individual having the Ebola Virus. Our model will not require personal contact. This way it will lower the risk of staff getting infected with Ebola. 
+
+\section{Performance metrics}
+\begin{itemize}
+\item Our final model will be able to predict an individual core body temperature with a 10 percent false rate accuracy. We will test our prototype with data from our sensors in-order to conclude that we have reached this target.
+\item Our product will be much faster than a thermometer check. While a thermometer takes minutes, our test will take seconds. Promising a short test time will assist in minimizing the exposure for non-infected individuals.  
+\item Our model will not require special expertise to operate. The output from the prototype will be Yes or No. Either the patient has high core body temperatures or not. 
+\item Our product will be operable by a person with no computer science background or an engineering background. People with no such knowledge will be able to run our model and understand the results. We will present the results in an easy to interpret meaner. 
+ 
+\end{itemize}
+\end{document}
