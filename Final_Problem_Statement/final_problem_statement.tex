@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{%
+  Problem Statement \\
+  \vspace{0.4cm}
+  \large Core Body Temperature Estimation to Detect Ebola Virus Disease \\
+  \vspace{0.4cm}
+  \large CS 461, Fall 2017, Group 34\\
+    }
+\author{Claude Maimon,  Brian Lee Huang , and Bianca Beauchamp}
+\date{ 20 October}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{abstract}
+Currently, to check for Ebola, doctors must use contact sensors such as thermometers to test for an elevated core body temperature in patients. This process is slow and can potentially lead to infection of staff members as well as other patients. With a large volume of patients, as there were in the 2015 Ebola outbreak, this method is extremely inefficient and can contribute to the spread of the Ebola Virus. This project will aim to create a device that will be able to quickly estimate a person’s core body temperature from a distance using only a thermal camera and stand-off sensors. To do this, we will construct a mathematical model that will use data taken from a thermal imaging camera. The mathematical model will determine whether or not a patient’s core body temperature is higher than normal. We will be working with Medecins Sans Frontieres and the MIME Capstone Team to complete this project.
+   \end{abstract}
+\newpage
+\section{Problem}
+In the medical industry, those who care for patients must take a patient’s core body temperature to determine whether or not the patient is fighting an infection. Currently, there is an Ebola outbreak in West Africa and there are many health-care professions that are risking infection to help people in need of medical help. In the health centers in West Africa, the only way to take a patient's temperature is by using a device that comes in contact with the patent. The proximity to the patient combined with the time it takes to get a temperature reading increases the risk of infection to the caretaker. Moreover, infected patients that are waiting to be examined are putting other non-symptomatic patients at risk of infection. This is caused by the healthy and the symptomatic patients being grouped together in one area. Without a method of separation, the risk of spreading the Ebola virus increases along with the volume of people coming to be examined. The doctors want the ability to separate the asymptomatic and the symptomatic people into different areas in order to quarantine those who have an elevated body temperature. This will lower the risk of infection for both staff and other patients. 
+
+\par 
+There is a need for a device that will estimate a patient’s core body temperature with no human to human contact involved. A thermal camera can pick the approximate skin temperature, but there are many different factors that could increase a person's skin temperature. Solely relying on skin temperature is unreliable and does not accurately indicate infection. A computational model is needed to calculate the core body temperature. This model can be created by using the relationship of skin temperature to the known core temperature.This should also work with minimal risk for the staff and other patients. The faster an individual could be diagnosed, the safer it will be for the present individuals at the health center. Using thermal images to predict core body temperature has been attempted in the past for the bird flu in Asia, however, we are trying to improve the accuracy and efficiency of this method of taking core temperatures. 
+  \par
+
+
+\section{Proposed solution}
+Our client needs a solution that can detect individuals that are showing signs of an infection quickly and without doctor supervision or human contact. We will design a computational model that will predict patient’s core body temperature. Our mathematical model will process patients’ skin temperature to estimate their core body temperature. This model should be able to detect whether or not a person has high core body temperature.  Our model will use data mainly from thermal images but we may add other sensors if needed. The resulting device will be much like a metal detector at an airport. Patients will walk through an entryway and a thermal image will be taken as they walk through, one at a time and a the device will produce a red light or green light as output. 
+ \par
+We will study the patterns of the data to create a mathematical model that will attempt to predict an individual’s body core temperature. The model will return a clear signal of whether or not the patient has high core body temperature. According to the model signal, patients will be directed to the appropriate waiting area. This will help to separate patients with high body temperature from people with normal body temperatures. Symptomatic patients will then receive additional testing.
+
+\section{Performance metrics}
+
+Our final model should be able to predict if a person has a high core body temperature with only a 10 percent false negative rate. The whole process should not take more than one minute a person. The device should also be very simple to use, providing a simple yes or no output. Either the patient has high core body temperatures or they do not. Our device should not require any specialized training or knowledge to use, the readouts of the data should be simple enough and it should be blatantly obvious if a person has high core body temperature or not.
+
+ 
+
+\end{document}
