@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[letterpaper, margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
 
 \title{%
   Problem Statement \\
