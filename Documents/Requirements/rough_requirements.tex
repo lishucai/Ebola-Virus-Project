@@ -18,26 +18,34 @@
 
 \begin{abstract}
 	The end goal of this project is to end up with a research paper. The paper should outline the problem that the project is trying to solve, the steps taken to solve the problem and how successfully we were
-	at solving the problem. The paper should also allow the project to be continued if a higher percent accuracy is required. The whole process should be explained in detail allowing whoever wants to continue the
-	project to continue without any problem. The end goal of this paper is if this project worked or not.
+	at solving the problem. The paper should also allow the project to be continued if someone chooses to. The whole process should be explained in detail allowing whoever wants to continue the
+	project to continue without any problem. The main body of this research paper will be about the program that we develop to predict a person's core body temperature. The program should first be able to
+	extract data from a thermal image. The data of the image should come from the top half, focusing on the head. It will then interpret the data to create a mathematical model that uses the temperature of a 
+	person's skin as data and analyzes that information and predicts what their core body temperature is. A high accuracy rate is not strictly required as that is not the point of the project, 
+	the goal of the is to determine if this method will be effective to detect whether a person is symptomatic with Ebola. A high accuracy rate is a good indicator that a mathematical model
+	is a good way to predict, where a low accuracy rate indicates that we should look for an alternative method.
+	
 \end{abstract}
 
 \newpage
-\section{Requirements}
+\section*{Requirements}
 	\begin{enumerate}
-		\item The program that we are creating should be able to process data from a thermal camera. It should be able to process the image and focus on the person's upper body and record the temperature from that area.
-		\item The program should be able to compare the temperature to the public average and check whether or not a person is above the average.
-		\item The whole process of taking the image and analyzing it should be faster than a regular check up.
-		\item The program should be easy to use. Zero background knowledge should be required to operate it.
-		\item The code will be able to cut out the person from the background.
-		\item We should provide multiple different statistical analysis of the data and provide the analysis with the smallest error.
-		\item We should be able to isolate the person in the image, and then isolate the persons head in the image.
-		\item A graph should be generated from a single person's data.
+		\item The program should be able to process data from a thermal camera. It should be able to process the image, focusing on the person's upper body and record the temperature from that area.
+		\item The program should then be able to cut out the person from the image, the main focus of this should be cutting out the person's head and neck from the image as that is where the temperature data will come from.
+		\item The program should then be able to plot all the data points which is represented by the pixels into a histogram. It should then analyze this histogram to get rid of any substantial outliers.
+		\item The data collected will be used to compare the temperature to the public average and check whether or not a person is above the average.
 		\item Ear temperature of the person should also be taken. We will then use this temperature to compare it to what our model predicted.
 		\item A mathematical model should be created out of all the data that is collected. The model will then be used to predict a person's core temperature.
+		\item A baseline of 40\% accuracy should be achieved from the model.
+		\item The whole process of taking the image and analyzing it should be faster than a regular check up.
+		\item The program should be easy to use. Zero background knowledge should be required to operate it.
+		\item Multiple different statistical analysis of the data will be provided in the report. The analysis with the smallest error is what we will recommend to be used in the final report and implementation.
+		\item We should provide an easy wait to input data for this project to be potentially carried on. Some GUI or commandline input will be implemented to input data into the model.
 	\end{enumerate}
-\section{Stretch Goals}
+\section*{Gantt Chart}
+\section*{Stretch Goals}
 	\begin{enumerate}
 		\item We will go out and collect data to feed into the model, and make it able to predict more accurately.
+		\item Any accuracy rate that is above the baseline of 40\% accuracy.
 	\end{enumerate}
 \end{document}
