@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.16)  3 NOV 2017 12:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.16)  3 NOV 2017 13:50
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -660,8 +660,7 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
 \c@gtt@lasttitleslot=\count117
 \c@gtt@elementid=\count118
 \c@gtt@currgrid=\count119
-)
-No file rough_requirements.aux.
+) (./rough_requirements.aux)
 \openout1 = `rough_requirements.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -676,6 +675,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
+
 -- Lines per column: 37 (exact).
 ABD: EveryShipout initializing macros [1]
 Overfull \hbox (1.85947pt too wide) in paragraph at lines 41--43
@@ -686,19 +686,18 @@ Overfull \hbox (1.85947pt too wide) in paragraph at lines 41--43
 [2] [3] [4]
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no 4 in font nullfont!
-Missing character: There is no , in font nullfont!
  [5
 
 ] [6
 
 ] (./rough_requirements.aux) ) 
 Here is how much of TeX's memory you used:
- 10715 strings out of 495064
- 214367 string characters out of 3182224
- 270098 words of memory out of 3000000
- 13727 multiletter control sequences out of 15000+200000
+ 10725 strings out of 495064
+ 214661 string characters out of 3182224
+ 272069 words of memory out of 3000000
+ 13735 multiletter control sequences out of 15000+200000
  25356 words of font info for 55 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,6n,59p,1036b,597s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,6n,59p,1036b,631s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on rough_requirements.dvi (6 pages, 38076 bytes).
+Output written on rough_requirements.dvi (6 pages, 41424 bytes).
