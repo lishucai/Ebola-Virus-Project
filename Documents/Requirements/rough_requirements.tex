@@ -72,8 +72,10 @@
 			\begin{landscape}
 			\begin{ganttchart}[
 				vgrid,
-				hgrid style/.style=red, 
-				]{1}{24}
+				x unit=0.75cm,
+               			y unit chart=1cm,
+				hgrid style/.style=red
+				]{24}{24}
 				\gantttitle{Ebola Virus Project Process}{24} \\
 				\ganttbar{Processing thermal image}{1}{2} \\
 				\ganttbar{Process data from pixels}{3}{5} \\
