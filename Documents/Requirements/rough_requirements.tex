@@ -31,14 +31,20 @@
 \newpage
 \section{Introduction}
 	\subsection{Purpose}
+	    In the medical industry it is known that one of the first signs of illness is an elevated core body temperature. Currently, the only way to get this temperature is with contact sensors which put health care workers at risk of infection if a patient is ill. This project will aim to solve this problem by creating a device that will be able to quickly take a person's core body temperature from a distance using only stand-off sensors.
 	\subsection{Scope}
+	    In Africa throughout the years there have been many different Ebola outbreaks. This project is part of a larger project that is trying to use robotics and automation to fight against Ebola. The National Institutes of Health are funding this project and we are also working with Medecins Sans Frontieres (Doctors Without Borders) in Brussels, Belgium who lead the response to the 2015-2017 Ebola outbreak. 
+        This project, if successful, will be part of an automated system that will sort people into two groups (symptomatic and asymptomatic) as they come in for care. This will lower the risk of health care workers and asymptomatic patients being exposed to Ebola. 
 	\subsection{Definitions, Acronyms and Abbreviations}
+	    OpenCV: an open source computer vision library.
 	\subsection{References}
+	    Chiang, M., Lin, P., Lin, L., Chiou, H., Chien, C., Chu, S. and Chiu, W. (2008). Mass Screening of Suspected Febrile Patients with Remote-sensing Infrared Thermography: Alarm Temperature and Optimal Distance. Journal of the Formosan Medical Association, [online] 107(12), pp.937-944. Available at: http://www.sciencedirect.com/science/
+	    article/pii/S0929664609600176 [Accessed 3 Nov. 2017].
 	\subsection{Overview}
+	    We will be creating this automated system by using pictures from thermal imaging camera and analyzing them to estimate core body temperature. We are going to attempt to do this by taking an average temperature of the head of the person in the thermal image, taking their core body temperature with an ear thermometer and comparing the average temperature from the image to their actual core body temperature to build a mathematical model that will estimate core temperature from the thermal image temperature. To get the average temperature of the person’s head from the thermal image we plan to isolate the head from the thermal image, make the pixels of the image into data points on a graph, get rid of the outliers, and take the average of the rest of the data points. We will also be collaborating with the mechanical engineering team to create this automated system. The mechanical team will be providing us with a thermal imaging camera and the physical structure that will hold the camera.
 \section{Overall Description}
 	\subsection{Product Perspective}
-		Our program will be working with a thermal camera for the data collection. We will also be using OpenCV which is an open source computer vision library, this library will be used for the image processing. 
-		Our program will also have a user interface that allows for easy data input. This user interface should be friendly enough where someone without an engineering background can easily use our program. 
+		Our program will be working with a thermal camera for the data collection. Our program will be working with a thermal camera for the data collection. We will also be using OpenCV for the image processing. Our program will also have a user interface that allows for easy data input. This user interface should be friendly enough where someone without an engineering background can easily use our program. 
 	\subsection{Product Functions}
 		\subsubsection{Processing Thermal Images}
 		We will create a program that will process data taken from a thermal camera image. The program will then isolate the person in the picture and only take data from the upper body of the person. In order to isolate the person, we will use a specific background or a door frame to cut only the person person from the image. Once the image is fully processed the pixels will be used as data points. The temperature value will depend on the color of the pixels and the program will analyze the data from all the pixels and process it. 
