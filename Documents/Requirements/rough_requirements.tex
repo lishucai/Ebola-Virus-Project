@@ -1,6 +1,8 @@
 \documentclass[10pt, draftclsnofoot, onecolumn]{IEEEtran}
 \usepackage[utf8]{inputenc}
 \usepackage{lscape}
+\usepackage{pgfgantt}
+
 
 \title{%
   Requirements \\
@@ -41,6 +43,28 @@
 	\subsection{Assumptions and Dependencies}
 		\begin{center}
 			\begin{landscape}
+			\begin{ganttchart}[
+				vgrid,
+				hgrid style/.style=red, 
+				]{1}{24}
+				\gantttitle{Ebola Virus Project Process}{24} \\
+				\ganttbar{Processing thermal image}{1}{2} \\
+				\ganttbar{Process data from pixels}{3}{5} \\
+				\ganttbar{Collecting Data}{1}{5} \\
+				\ganttbar{Analyzing data}{7}{10} \\
+				\ganttbar{Program for graduate students}{12}{14} \\
+				\ganttbar{Mathematical model}{12}{15} \\
+				\ganttbar{Testing and result analyzing}{17}{18} \\
+				\\[grid]
+				\ganttbar{Stretch goals}{19}{20} \\
+				\ganttlink{elem0}{elem1}
+				\ganttlink{elem1}{elem3}
+				\ganttlink{elem2}{elem3}
+				\ganttlink{elem3}{elem4}
+				\ganttlink{elem3}{elem5}
+				\ganttlink{elem5}{elem6}
+				\ganttlink{elem6}{elem7}
+			\end{ganttchart}
 			\end{landscape}
 		\end{center}
 \section{Specific requirements}
