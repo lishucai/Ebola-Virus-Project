@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.16)  2 NOV 2017 23:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.16)  3 NOV 2017 12:47
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -677,30 +677,21 @@ LaTeX Font Info:    ... okay on input line 17.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
 -- Lines per column: 37 (exact).
-ABD: EveryShipout initializing macros [1] [2] [3]
+ABD: EveryShipout initializing macros [1]
+Overfull \hbox (1.85947pt too wide) in paragraph at lines 41--43
+\OT1/ptm/m/n/10 the For-mosan Med-i-cal As-so-ci-a-tion, [on-line] 107(12), pp.
+937-944. Avail-able at: http://www.sciencedirect.com/science/
+ []
+
+[2] [3] [4]
 Missing character: There is no 2 in font nullfont!
 Missing character: There is no 4 in font nullfont!
 Missing character: There is no , in font nullfont!
- [4
+ [5
 
-]
+] [6
 
-! LaTeX Error: \begin{enumerate} on input line 92 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.104 \end{document}
-                    
-? 
-[5
-
-] (./rough_requirements.aux) )
-(\end occurred inside a group at level 1)
-
-### semi simple group (level 1) entered at line 92 (\begingroup)
-### bottom level 
+] (./rough_requirements.aux) ) 
 Here is how much of TeX's memory you used:
  10715 strings out of 495064
  214367 string characters out of 3182224
@@ -708,6 +699,6 @@ Here is how much of TeX's memory you used:
  13727 multiletter control sequences out of 15000+200000
  25356 words of font info for 55 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,6n,59p,604b,597s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,6n,59p,1036b,597s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on rough_requirements.dvi (5 pages, 34540 bytes).
+Output written on rough_requirements.dvi (6 pages, 38076 bytes).
