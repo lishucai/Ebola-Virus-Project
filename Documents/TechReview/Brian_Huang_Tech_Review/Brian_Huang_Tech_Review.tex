@@ -1,0 +1,81 @@
+\documentclass[10pt, draftclsnofoot, onecolumn]{IEEEtran}
+\usepackage[utf8]{inputenc}
+
+\title{%
+  Requirements \\
+  \vspace{0.4cm}
+  \large Core Body Temperature Estimation to Detect Ebola Virus Disease \\
+  \vspace{0.4cm}
+  \large CS 461, Fall 2017, Group 34\\
+    }
+\author{Brian Lee Huang}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The goal of this project is to be able to determine a person’s core body temperature just by taking a thermal image of them, and analyzing the data take from that picture. This requires many parts, but the three I am tasked with is the Mathematical model, Statistical Analysis, and the User Interface. To create these piece of the project I need to choose a piece of technology to create them. For the model and analysis I chose to use R, a language specifically designed for statistical computing and analysis. For the user interface I am choosing to use command line as it is something I already know and it is easy to use. However the choice for the user interface may change in the future depending on how far the project gets. The most important feature about all my choices is that each option is open source meaning there will be no licensing issues.
+\end{abstract}
+
+\newpage
+\section{Introduction}
+For this project I am tasked with creating the Mathematical Model, User Interface and the Statistical Analysis. The model and the analysis are mostly done towards the end of the project, when we have a sufficient amount of data to feed into the model and to create a statistical analysis. The user interface can be done at almost anytime during the project. A different user interface should be created for the final product, where it is easy to use and the output will be a simple yes or no.
+
+The goal of this project is to create a program that uses a thermal camera to measure a person's skin temperature, then use that data to predict their core temperature. An elevated core temperature is an indicator that the person is symptomatic with the Ebola virus. The model and the analysis will be what predicts the core body temperature given a skin temperature.
+
+\section{Mathematical Model}
+	\subsection{Overview}
+	The mathematical model is one of the key feature of this program. It is what will be used in the end to predict the core body temperature of a person from their skin temperature that is taken from the thermal camera. The model will come from a statistical analysis of the model, where the best analysis will then become the model.
+	\subsection{Critera}
+	We have found other projects that have done something similar to our project. They took a thermal image of a person’s ear and head to derive a person’s core body temperature. In this paper they achieved a positive predicted value of 40\%. This project was done in 2008 so we want to achieve at least a baseline of 40\%. However, we will be aiming for a 40\% false negative rate, instead of a positive predicted.
+	\subsection{Potential Choices}
+	For this aspect of the project we have chosen three different possibilities to create a model. They are python, MATLAB and R.
+	\subsection{First Choice}
+	Python is a versatile language that we planned to use from the very beginning. It is easy to use, and has very many useful functions that makes data manipulation easier. It also has many plugins and libraries that can be used for mathematical creation.
+	\subsection{Second Choice}
+	MATLAB is a computing language created by MathWorks which is primarily used for numerical computing. This makes it an obvious potential choice as we need to create a model from the data, and analyze it. MATLAB has many functions built into it so we mostly do not write any of the functions ourself. The main difference between Python and R is that MATLAB requires a licence.
+	\subsection{Third Choice}
+	R is language used for statistical analysis and graphing. It can easily analyze the data and create the model and graphs that are needed. R also includes many packages, so we can simply add in any feature that we need in the future.
+	\subsection{Discussion}
+	The first and most important distinction to make between the three choices is that Python and R are both open source, while MATLAB is not. This in itself makes MATLAB not a good option for us. Python is more of a general purpose language, while R has a specific use. For inputting data R is much better than Python because it is simply a few simple commands, while in python we will most likely have to write our own parser. Create a model will most likely be easier in R because it is a tool used for statistical analysis, while python is just general purpose. We most likely will have to install a special package for the create of the model, but it will most likely be easier to create in R.
+	\subsection{Conclusion}
+	We should use R for the model creation. Matlab requires a licence while the other two choices are free. R was created for a specific purpose and we are using it for that purpose. This could be done in python, but python is more of a general purpose language. This means that if we want to do the things R is capable of in python, we would most likely need to install many different packages. Data input is also very easy in R since it was made with that in mind. In the end I feel like R will be the best option to go with since we are using it for its analysis capabilities.
+\section{Statistical Analysis}
+The statistical analysis is the intermediate step between the mathematical model and the data processing of the thermal images. We use different statistical analysis to determine which is best for the creation of the mathematical model.
+	\subsection{Overview}
+	The analysis should show some kind of trend in the data. It should be easy to tell what different factors affect a person’s core body temperature.
+	\subsection{Critera}
+	The analysis should show some kind of trend in the data. It should be easy to tell what different factors affect a person’s core body temperature.
+	\subsection{Potential Choices}
+	For this aspect of our project we would use similar tools, if not the same tool for the mathematical model. Our choices for this piece are MATLAB, R, and Microsoft Excel.
+	\subsection{First Choice}
+	MATLAB can easily process huge amounts of data and create multiple different analysis of the data. It has many built in functions so the different analysis could simply be changed by changing a name, or number of a function. 
+	\subsection{Second Choice}
+	R is an obvious choice for as the whole point of R is statistical analysis. Just like MATLAB it can easily process huge amounts of data and create many different analysis. Data input would also be extremely simple with R as it simply uses a function call or two for processing the data.
+	\subsection{Third Choice}
+	Excel is another choice we had as it is a tool to create spreadsheets and analyze data. Data input is simple, and most of the analysis is simple. No code has to be written and it is all done through the user interface of the program.
+	\subsection{Discussion}
+	In terms of power, Excel is lacking when compared to MATLAB and R. MATLAB and R are both stronger in than excel in the analysis portion as they both can import different libraries and packages if the built in tools are not enough. However both MATLAB and Excel require licences while R is open source.
+	\subsection{Conclusion}	
+	R is the clear choice for this piece of the project as it is the most powerful and it is also free. Both MATLAB and Excel require licences that could become an issue in the future. Using an open source software makes it easier for us, and easier for anyone that intends to work on this in the future.
+\section{User Interface}
+The user interface is what we will be using to input our data and display the output. In the end we need to create something simple that can be used by someone without engineering or computer experience. However, if the project does not get to that point the plan is to have a graduate student take over. For this we could create a different UI, something that is easy to use and maybe a bit faster than a simple UI.
+	\subsection{Overview}
+	For our end product we need something simple and clear to use. The output of the program should be displayed with a simple yes or no.
+	\subsection{Critera}
+	For our end product we need something simple and clear to use. The output of the program should be displayed with a simple yes or no.
+	\subsection{Potential Choices}
+	For this piece of the project depending on where we are, we could use something as simple as command line. However for the simpler version we chose to use either Java or C++.
+	\subsection{First Choice}
+	Command line is an easy choice for someone with a background in computer science. If a graduate student were to take over this project in the end a simple command line UI should be sufficient. A command line UI is easy to create, compatible with almost any language and easy to use, with a slight learning curve. Inputting and outputting can also all be done with a different program so it is simply one command the user needs to put in to get the results.
+	\subsection{Second Choice}
+	C++ is a good choice for UI design as it has many different libraries to use such as Qt and GTKmm to create the simple UI for us.
+	\subsection{Third Choice}
+	Java is also a good choice for creating a user interface.
+	\subsection{Discussion}
+	The command line interface will be easy to create, while the other languages will have some learning required. The simpler UI requires learning the different libraries available to that language for UI creation.
+	\subsection{Conclusion}		
+	Depending on where the project ends we can choose to make a simple fast ui with command line, or make a ui with Java or C++. Creating a UI with C++ should be easier because of libraries such as Qt.
+\section*{References}
+\end{document}
