@@ -1,5 +1,10 @@
-\documentclass[10pt, draftclsnofoot, onecolumn]{IEEEtran}
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
 \usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{geometry}
+\geometry{textheight=9.5in, textwidth=7in}
 
 \title{%
   Design Document \\
@@ -22,13 +27,31 @@
 	extract data from a thermal image. The data of the image should come from the top half, focusing on the head. It will then interpret the data to create a mathematical model that uses the temperature of a 
 	person's skin as data and analyzes that information and predicts what their core body temperature is. A high accuracy rate is not strictly required as that is not the point of the project, 
 	the goal of the is to determine if this method will be effective to detect whether a person is symptomatic with Ebola. A high accuracy rate is a good indicator that a mathematical model
-	is a good way to predict, where a low accuracy rate indicates that we should look for an alternative method.
+	is a good way to predict, wherse a low accuracy rate indicates that we should look for an alternative method.
 \end{abstract}
 
 \newpage
+
+\tableofcontents
+\newpage
 \section{Introduction}
-\section{Image processing 1}
-\section{Image processing 2}
+\section{Importing images and data}
+The first step for image processing is importing the image from the camera. It’s important that the image will stay in the right format to keep the pixels’ data.  This means that the image needs to be in a format which maintains the temperature data.  
+
+We will use the FLIR Tools software for this part. FLIR Tools is a software for importing and analyzing images from FLIR cameras. The software can be used to import images to a personal computer, search the image library using various filters, store search criteria and manipulate images. The software is free to use and has a simple installation process. FLIR Tools is suitable for our FLIR A315 camera. Other than importing images the tool can be used to create PDF reports, add headers logos to images and sort the image folder by specific variables.\cite{ClaudeTech}
+
+This software is the best option for us because it’s free and it offers all the features we need for this process. Even though FLIR Tools+ offers more features, we don’t need them. By using the free option, we will make the project cheaper and still get all the capabilities we need to transfer the files.
+Other than just importing images we will also collect ear temperature from people. We need these temperatures to compare them to the estimated temperature from the camera. We will collect that data by taking people’s temperature and store them in a file. Every temperature will be paired with an image, so we will know which temperature belongs to which person. 
+
+Our team still doesn’t have the thermal camera. There is a chance that the camera will not get to the school in time for this project. In case that that happens, we will have to fake the data. We will use normal black and white images taken from a web camera. We will treat these images as if they were thermal images. The results that we will get from this images won’t be correct but they will help us build our model. 
+
+
+\section{Images into right format}
+
+In order to process the thermal images, they have to be in the right format. After importing the images from the camera to the computer, our program will transfer the images into a two-dimension array format. This format will allow for an easy image processing. Every element in the two-dimension array will hold a value of a pixel in the image. This structure will allow for an easy processing of the pixels’ values. 
+
+Our program will use OpenCV with Python to manipulate the image.  OpenCV (Open Source Computer Vision Library) is a free open source computer vision software. It has interfaces for C++, C, Python, and Java and it supports various operating systems. OpenCV’s library has more than 2500 algorithms which offer many features. Some of those features are facial recognition, gesture recognition, motion understanding, biomedical analysis and more. The software is used all around the world and has a strong user community and offers technical support. OpenCV is also known by our client so we will have access to people that know how to work with it. OpenCV is a good pick for this part because it is free and has a large users’ community. It has shown to have best performances in comparison to other image processing libraries and it has many easy to understand tutorials available. Moreover, our client suggested that we will use it.\cite{ClaudeTech}
+
 \section{Image Processing 3}
 \section{learning 1}
 \section{learning 2}
@@ -61,4 +84,9 @@ There will be not extensive testing of the user interface. To test the command l
 The timeline of the user interface will roughly be, we first create a command line user interface and develop is as we develop the main programs. Second we do research into the various user interface libraries in python. Third we create a simple user interface using those libraries for the final product.
 
 \section{Conclusion}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{mybib}
+
 \end{document}
