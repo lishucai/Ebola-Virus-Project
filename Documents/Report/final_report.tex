@@ -1,0 +1,106 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage{lscape}
+\usepackage{pgfgantt}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{geometry}
+\geometry{textheight=9.5in, textwidth=7in}
+
+\title{%
+  Requirements \\
+  \vspace{0.4cm}
+  \large Core Body Temperature Estimation to Detect Ebola Virus Disease \\
+  \vspace{0.4cm}
+  \large CS 461, Fall 2017, Group 34\\
+    }
+\author{Claude Maimon, Brian Lee Huang, and Bianca Beauchamp}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	The end goal of this project is to end up with a research paper. The paper should outline the problem that the project is trying to solve, the steps taken to solve the problem and how successfully we were
+	at solving the problem. The paper should also allow the project to be continued if someone chooses to. The whole process should be explained in detail allowing whoever wants to continue the
+	project to continue without any problem. The main body of this research paper will be about the program that we develop to predict a person's core body temperature. The program should first be able to
+	extract data from a thermal image. The data of the image should come from the top half, focusing on the head. It will then interpret the data to create a mathematical model that uses the temperature of a 
+	person's skin as data and analyzes that information and predicts what their core body temperature is. A high accuracy rate is not strictly required as that is not the point of the project, 
+	the goal of the is to determine if this method will be effective to detect whether a person is symptomatic with Ebola. A high accuracy rate is a good indicator that a mathematical model
+	is a good way to predict, where a low accuracy rate indicates that we should look for an alternative method.
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+\newpage
+\section{project purposes and goals}
+Currently, to check for Ebola, doctors must use contact sensors such as thermometers to test for an elevated core body temperature in patients. This process is slow and can potentially lead to the infection of staff members as well as other patients. With a large volume of patients, as there were in the 2015 Ebola outbreak, this method is extremely inefficient and can contribute to the spread of the Ebola Virus.
+
+Those who care for patients must take a patient’s core body temperature to determine whether or not the patient is fighting an infection. The proximity to the patient combined with the time it takes to get a temperature reading increases the risk of infection to the caretaker. Moreover, infected patients that are waiting to be examined are putting other asymptomatic patients at risk of infection. This is caused by the healthy and the symptomatic patients being grouped together in one area. Without a method of separation, the risk of spreading the Ebola virus increases along with the volume of people coming to be examined. The doctors want the ability to separate the asymptomatic and the symptomatic people into different areas in order to quarantine those who have an elevated body temperature. This will lower the risk of infection for both staff and other patients.
+
+Our client asked us for a solution that can detect individuals that are showing signs of an infection quickly and without doctor supervision or human contact. We will design a computational model that will predict patient’s core body temperature. Our mathematical model will process patient's skin temperature to estimate their core body temperature. This model should be able to detect whether or not a person has high core body temperature. Our model will use data mainly from thermal images but we may add other sensors if needed. The resulting device will be much like a metal detector at an airport. Patients will walk through an entryway and a thermal image will be taken as they walk through. The device will produce a red light or green light as output indicating which area the patient should go to.
+
+ \section{Where we are at}
+During this term we ran into a few issues due to miss communications and changes of plans. We struggled to communicate with our client, Bill, because there was a gap in knowledge between us. He assumed that we knew more than we did and because we didn’t know enough, we struggled to ask the right questions. Our client also missed a meeting with us, which was a critical meeting because we were supposed to go over our final requirements document. He ended up approving it the next week but then when we met with him again he changed the design. This new design seemed much more difficult so we discussed it with Andrew (our TA) and he agreed that it seemed more confusing and difficult. Then during our next client meeting Andrew came with us to help us ask the right questions to get the project figured out. We were able to get a good idea of a design plan out of this meeting and we are still working with Andrew to finalize this plan. This happened during week 10 and so all of our deadlines had to be pushed back because of these complications.
+
+Due to all the changes in our design, we haven't made much progress in our project. We have finished all of the assignments that were required for fall term but not much else. We did a lot of research and found sources that have attempted projects that are similar to ours. These sources provided helpful information because we had no idea where to begin, what a reasonable ending point would be or what stretch goals would be. We also spent time researching and learning about image processing but then the design changed and we most likely won’t be using that method anymore. 
+
+We are facing some uncertainties since we still don’t have the thermal camera and it is very important component for our project. We can’t get any real data without it. We were supposed to receive it in October and then it got pushed to November but now it has been pushed to January but there are no guarantees that it won’t be pushed again because we are waiting for the university to approve the funding. The mechanical team chose the camera; we did not have any input so we have to make due with this constraint. If we don’t receive the camera in time we plan on faking data by using black and white images as mock thermal images. We will not know for sure if our program will work with a thermal camera and body temperatures but we will be able to create our project that could be tested with a thermal camera when it does arrive. .
+
+\section{Weekly summary}
+\subsection{week 1}
+We just learned about the class and the offered projects. We looked through all of the projects and selected our favorite five projects.
+
+\subsection{week 2}
+We found out that we received the Ebola project. We email our client, Bill, and we set up a time for a weekly meeting with him. We decided to meet every Friday. We were also contacted by our TA, Andrew. We set up a weekly meeting with him on Fridays too. Other than technical arrangements, we also started working on the problem statement individual assignment. 
+
+\subsection{week 3}
+We met with Bill and Andrew for the first time. Bill explained to us the project overall description. He explained that we will work with a mechanical team and that we will get the thermal camera in a few weeks. After the meeting we met with Andrew, our TA. He introduced himself and explained our responsibilities for this class. We explained to his the overall description that we received from Bill and he seemed a little concerned with the fact that we still don’t have the thermal camera. Except for meetings we also worked on finalizing our problem statement documents. 
+
+\subsection{week 4}
+We worked on the final problem statement. We combine all of our individual documents to create the final one. We met with our client and  redefined our final solution. Bill explained to us that this is a research project and the solution might not work. It was a relief because our research showed that other people have tried this before but they didn’t receive good outcomes\cite{OtherResearch}. Bill explained to us that  we are going to test this approach and do our best to figure out if we can estimate the core body temperature from the images. If we won’t finish the whole project it will move to his grad students next year. 
+
+\subsection{week 5}
+We focused on our project's requirements. We started writing them down but we noticed that we didn’t have enough information. When we met with Bill, he helped us with defining more requirements for the project. We discussed the camera the mechanical team is going to use and the tools we should use to learn how to process the images from the camera. Bill said that it will still be a few weeks until we receive the camera. 
+
+\subsection{week 6}
+We worked on finalizing our requirement  document. It was helpful to focus on that because it gave us a better understanding on the project. It made it clearer what the final product needs to be. We still needed some more clarification from Bill  but overall we understand our project better. We also started working on image processing. Bill suggested that we will use OpenCV so we researched it. Bill didn’t arrive to our weekly meeting so we couldn’t discuss some of the problems we had. 
+\subsection{week 7}
+\subsection{week 8}
+We finished up our tech review rough drafts. We met with Bill and the requirement have changed a little. Also, the camera was ordered but the mechanical team won't get it until at least January. We can start working on image processing but not anything else.
+
+
+\subsection{week 9}
+We didn’t make much progress because it was thanksgiving weekend. We didn’t have meeting with Bill or Andrew. We just finished the tech review documents to the best of our abilities. Bianca was unable to write her final tech review because her part had changed the most and it was in question as to whether or not it was going to be too difficult to even do. 
+
+\subsection{week 10}
+We talked to Andrew and Kevin because we didn’t know if we could finish the project in time. Andrew decided to come to the weekly client meeting to clear things up for us. He was able to help us come up with a design plan and split our project into nine parts but the design has not been finalized. 
+
+\section{Retrospective }
+
+\begin{tabular}{|p{5cm} | p{5cm} | p{5cm}|} 
+	\hline
+	positives  & deltas  & actions \\ [0.5ex] 
+	\hline\hline
+	Everyone (TA, client, and group) is on the same page now & Finalize new design plan & Bring new design plan to TA to review and then to client for final review\\
+	\hline
+	We are excited about our project & Make sure the client and the group is on the same page & During the weekly client meeting, don’t be afraid to ask as many clarifying questions as necessary to understand what is going on and don’t be afraid to tell the client that we are so confused that we don’t know what questions to ask \\
+	\hline
+	Our design is more refined and close to its final form &  &  \\
+	\hline  
+	Our communication and effort between group members is good &  & \\
+	\hline
+
+	
+\end{tabular}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{mybib}
+
+
+\end{document}
