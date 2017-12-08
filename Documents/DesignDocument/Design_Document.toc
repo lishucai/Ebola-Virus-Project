@@ -1,7 +1,7 @@
 \contentsline {section}{\numberline {1}Introduction}{3}
 \contentsline {section}{\numberline {2}Importing images and data}{3}
 \contentsline {section}{\numberline {3}Images into right format}{3}
-\contentsline {section}{\numberline {4}Image Processing 3}{4}
+\contentsline {section}{\numberline {4}Pixel selection}{3}
 \contentsline {section}{\numberline {5}learning 1}{4}
 \contentsline {section}{\numberline {6}learning 2}{4}
 \contentsline {section}{\numberline {7}learning 3}{4}

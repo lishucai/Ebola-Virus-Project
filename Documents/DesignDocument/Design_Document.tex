@@ -27,7 +27,7 @@
 	extract data from a thermal image. The data of the image should come from the top half, focusing on the head. It will then interpret the data to create a mathematical model that uses the temperature of a 
 	person's skin as data and analyzes that information and predicts what their core body temperature is. A high accuracy rate is not strictly required as that is not the point of the project, 
 	the goal of the is to determine if this method will be effective to detect whether a person is symptomatic with Ebola. A high accuracy rate is a good indicator that a mathematical model
-	is a good way to predict, wherse a low accuracy rate indicates that we should look for an alternative method.
+	is a good way to predict, where a low accuracy rate indicates that we should look for an alternative method.
 \end{abstract}
 
 \newpage
@@ -52,7 +52,12 @@ In order to process the thermal images, they have to be in the right format. Aft
 
 Our program will use OpenCV with Python to manipulate the image.  OpenCV (Open Source Computer Vision Library) is a free open source computer vision software. It has interfaces for C++, C, Python, and Java and it supports various operating systems. OpenCV’s library has more than 2500 algorithms which offer many features. Some of those features are facial recognition, gesture recognition, motion understanding, biomedical analysis and more. The software is used all around the world and has a strong user community and offers technical support. OpenCV is also known by our client so we will have access to people that know how to work with it. OpenCV is a good pick for this part because it is free and has a large users’ community. It has shown to have best performances in comparison to other image processing libraries and it has many easy to understand tutorials available. Moreover, our client suggested that we will use it.\cite{ClaudeTech}
 
-\section{Image Processing 3}
+\section{Pixel selection}
+In order to get a good temperature estimation from the camera, we need to only select specific pixels. Our program will go through the pixels’ values in the two-dimension array and select specific pixels. It will only select values that are higher than 98.8 and lower than 105. The pixel values might not be represented as degrees. We will find the pixel values that correspond to these degrees and will operate according to those values. This approach will work because we only want to analyze the person’s head in the picture. We don’t want low and high pixels from the background to affect our results. 
+
+Since this is a research project we will try the previous method first, but we might choose to get the pixels values in a different way as well. The second way to do this is to cut the person’s head from the picture before getting the pixels’ values. This way, we would already eliminate the background so we don’t need to worry about it when analyzing the image. This approach might be less effective since the cutting of the head is not perfect and might have some background in it. 
+
+
 \section{learning 1}
 \section{learning 2}
 \section{learning 3}
