@@ -1,0 +1,74 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage{lscape}
+\usepackage{pgfgantt}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{geometry}
+\geometry{textheight=9.5in, textwidth=7in}
+
+\title{%
+  Reportquirements \\
+  \vspace{0.4cm}
+  \large Core Body Temperature Estimation to Detect Ebola Virus Disease \\
+  \vspace{0.4cm}
+  \large CS 461, Fall 2017, Group 34\\
+    }
+\author{Claude Maimon, Brian Lee Huang, and Bianca Beauchamp}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	The end goal of this project is to end up with a research paper. The paper should outline the problem that the project is trying to solve, the steps taken to solve the problem and how successfully we were
+	at solving the problem. The paper should also allow the project to be continued if someone chooses to. The whole process should be explained in detail allowing whoever wants to continue the
+	project to continue without any problem. The main body of this research paper will be about the program that we develop to predict a person's core body temperature. The program should first be able to
+	extract data from a thermal image. The data of the image should come from the top half, focusing on the head. It will then interpret the data to create a mathematical model that uses the temperature of a 
+	person's skin as data and analyzes that information and predicts what their core body temperature is. A high accuracy rate is not strictly required as that is not the point of the project, 
+	the goal of the is to determine if this method will be effective to detect whether a person is symptomatic with Ebola. A high accuracy rate is a good indicator that a mathematical model
+	is a good way to predict, where a low accuracy rate indicates that we should look for an alternative method.
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+\newpage
+\section{project purposes and goals}
+Currently, to check for Ebola, doctors must use contact sensors such as thermometers to test for an elevated core body temperature in patients. This process is slow and can potentially lead to infection of staff members as well as other patients. With a large volume of patients, as there were in the 2015 Ebola outbreak, this method is extremely inefficient and can contribute to the spread of the Ebola Virus.
+
+Those who care for patients must take a patient’s core body temperature to determine whether or not the patient is fighting an infection. The proximity to the patient combined with the time it takes to get a temperature reading increases the risk of infection to the caretaker. Moreover, infected patients that are waiting to be examined are putting other non-symptomatic patients at risk of infection. This is caused by the healthy and the symptomatic patients being grouped together in one area. Without a method of separation, the risk of spreading the Ebola virus increases along with the volume of people coming to be examined. The doctors want the ability to separate the asymptomatic and the symptomatic people into different areas in order to quarantine those who have an elevated body temperature. This will lower the risk of infection for both staff and other patients.
+
+Our client asked us for a  solution that can detect individuals that are showing signs of an infection quickly and without doctor supervision or human contact. We will design a computational model that will predict patient’s core body temperature. Our mathematical model will process patient's’ skin temperature to estimate their core body temperature. This model should be able to detect whether or not a person has high core body temperature.  Our model will use data mainly from thermal images but we may add other sensors if needed. The resulting device will be much like a metal detector at an airport. Patients will walk through an entryway and a thermal image will be taken as they walk through. The device will produce a red light or green light as output indicating which area the patient should go to.
+
+According to our problem statement, our design will be fast and simple to use. The problem statement also states that we will have up to 10\% false negative rate. This requirement have changed after some research was done showing that this result might not be realistics for us to achieve. We will discuss in future slide what our requirement changed to. 
+
+
+\section{current progress}
+\subsection{Problems and solutions}
+\section{weekly summaries}
+
+\subsection{week 1}
+\subsection{week 2}
+\subsection{week 3}
+\subsection{week 4}
+\subsection{week 5}
+\subsection{week 6}
+\subsection{week 7}
+\subsection{week 8}
+\subsection{week 9}
+\subsection{week 10}
+
+\subsubsection{Retrospective }
+
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{mybib}
+
+
+\end{document}
