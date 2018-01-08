@@ -1,12 +1,11 @@
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {section}{\numberline {2}Importing images and data}{3}
-\contentsline {section}{\numberline {3}Images into right format}{3}
-\contentsline {section}{\numberline {4}Pixel selection}{3}
-\contentsline {section}{\numberline {5}learning 1}{4}
-\contentsline {section}{\numberline {6}learning 2}{4}
-\contentsline {section}{\numberline {7}learning 3}{4}
-\contentsline {section}{\numberline {8}Statistical Analysis}{4}
-\contentsline {section}{\numberline {9}Production Model}{4}
-\contentsline {section}{\numberline {10}User Interface}{5}
-\contentsline {section}{\numberline {11}Conclusion}{6}
-\contentsline {section}{References}{6}
+\contentsline {section}{\numberline {1}Introduction}{4}
+\contentsline {section}{\numberline {2}Importing Images and Image data}{4}
+\contentsline {section}{\numberline {3}Formatting Images}{4}
+\contentsline {section}{\numberline {4}Pixel selection}{5}
+\contentsline {section}{\numberline {5}Summary Statistics}{5}
+\contentsline {section}{\numberline {6}Model}{5}
+\contentsline {section}{\numberline {7}Model Testing}{6}
+\contentsline {section}{\numberline {8}Evaluation}{7}
+\contentsline {section}{\numberline {9}Production Mode}{7}
+\contentsline {section}{\numberline {10}User Interface}{7}
+\contentsline {section}{\numberline {11}Conclusion}{8}

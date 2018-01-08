@@ -4,6 +4,7 @@
 \usepackage{url}
 \usepackage{caption}
 \usepackage{geometry}
+\usepackage{gensymb}
 \geometry{textheight=9.5in, textwidth=7in}
 
 \title{%
@@ -86,6 +87,13 @@ Absolute error will be used for finding the error of this model. Any error at al
 
 
 \section{Evaluation}
+
+After the model is created we need to test how accurate the production model is. There are three different statistics that we can use to evaluate how well the product is doing. We can use false positives, false negatives, and accuracy. The rate that we really care about is the percent of false negative. While the other statistics are important, the false negative statistic is critical to keep as low as possible. Sending a unhealthy person home could just result in spreading the disease even further. We would also like to have our accuracy rate as high as possible, as that is the whole point of the project. False positive is the least important statistic as while it is not prefered to have a false positives, it is much less harmful to keep a healthy patient than sending a unhealthy patient home.
+
+To produce data for these statistics we will be using a model to evaluate skin temperature and relate that to body temperature. Core body temperature usually sits around 98.6 \degree F plus or minus one degree. Anything lower or higher is not normal, and results in either hypothermia or a fever. For this project we only care about the higher range, so any temperature under the range can be considered safe. Anything higher can be considered in the fever range, so these temperatures would not pass. Our model will be based around these thresholds, so anything in the range of core body temperature and below would be considered safe. Anything higher would be considered unsafe and would considered symptomatic with Ebola. To gather data for these statistics we simply create a running tally of the predicted core body temperature, the real core body temperature and if the model was correct or not. Then this table would simply be outputted as some text file that we could easily analyze and look at the rates.
+
+To minimize our false positive rate we can use a receiver operating characteristic curve to evaluate how well we are doing, and to adjust the threshold as necessary. This curve is dependant on the false positive rate, and the true positive rate, and changing the threshold will allow us to modify those specific rates. Using the curve and changing the threshold will allow us to modify our program to be as accurate as possible. The ROC curve however does not take false negative into account, so we would need to find another method along with the ROC curve to make sure the false negative rate is kept at its absolute minimum.
+
 
 
 \section{Production Mode}
