@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.16)  10 JAN 2018 22:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.16)  10 JAN 2018 23:23
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -7,30 +7,7 @@ entering extended mode
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
 aded.
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 ï
-     »¿\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
-? 
-! Interruption.
-\GenericError  ...                                
-                                                  \endgroup 
-l.1 ï
-     »¿\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
-? 
-Missing character: There is no ï in font nullfont!
-Missing character: There is no » in font nullfont!
-Missing character: There is no ¿ in font nullfont!
 (./IEEEtran.cls
-Overfull \hbox (20.0pt too wide) in paragraph at lines 1--201
-[] 
- []
-
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -427,7 +404,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen140
 \Gm@dimlist=\toks18
 )
-No file Design_Document.aux.
+(./Design_Document.aux)
 \openout1 = `Design_Document.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -442,6 +419,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
+
 -- Lines per column: 39 (approximate, difference = 14.73578pt).
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -482,7 +460,7 @@ Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 21.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
-) [1]
+)
 LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 21
 .
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -498,7 +476,7 @@ File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 23.
- [2]
+ [1]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
@@ -509,45 +487,23 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 \tf@toc=\write3
 \openout3 = `Design_Document.toc'.
 
- [3]
-
-LaTeX Warning: Citation `ClaudeTech' on page 4 undefined on input line 40.
-
-
-LaTeX Warning: Citation `ClaudeTech' on page 4 undefined on input line 53.
-
-[4]
-
-LaTeX Warning: Citation `BiancaTech' on page 5 undefined on input line 65.
-
-[5]
-
-LaTeX Warning: Citation `BiancaTech' on page 6 undefined on input line 79.
-
-
-LaTeX Warning: Citation `BiancaTech' on page 6 undefined on input line 85.
-
-[6]
-
-LaTeX Warning: Citation `BrianTech' on page 7 undefined on input line 90.
-
-
-LaTeX Warning: Citation `BrianTech' on page 7 undefined on input line 103.
-
-[7]
-No file Design_Document.bbl.
-[8] (./Design_Document.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+ [2] [3] [4] [5] [6] (./Design_Document.bbl
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 26.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8.03> on input line 26.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.62097> on input line 26.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <4.015> on input line 26.
+) [7]
+(./Design_Document.aux) ) 
 Here is how much of TeX's memory you used:
- 2989 strings out of 495064
- 50354 string characters out of 3182224
+ 3013 strings out of 495064
+ 50794 string characters out of 3182224
  106963 words of memory out of 3000000
- 6189 multiletter control sequences out of 15000+200000
+ 6209 multiletter control sequences out of 15000+200000
  29405 words of font info for 75 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 36i,5n,38p,1414b,233s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,5n,38p,1414b,352s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Design_Document.dvi (8 pages, 22000 bytes).
+Output written on Design_Document.dvi (7 pages, 23124 bytes).
