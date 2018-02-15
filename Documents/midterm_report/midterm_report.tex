@@ -1,0 +1,105 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{graphicx} 
+
+
+\title{%
+  Midterm Progress Report \\
+  \vspace{0.4cm}
+  \large Core Body Temperature Estimation to Detect Ebola Virus Disease \\
+  \vspace{0.4cm}
+  \large CS 461, Fall 2017, Group 34\\
+    }
+\author{Claude Maimon, Brian Lee Huang, and Bianca Beauchamp}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+
+\section{Image processing, Claude Maimon}
+
+\subsection{briefly recaps the project purposes and goals}
+My part of the project is the image processing. I am responsible for getting the camera to take a picture and import that image into my code. Moreover, I am also responsible for processing the images and setting a range of temperature that the code uses. The goal of my part is to produce one temperature from the image and send it into the model part. 
+
+
+\subsection{describes where you are currently on the project}
+Currently, in the image processing part, we are halfway done. We have the code that takes an image or csv files and processes those files. For the tiff image files, we find the head and get the pixels values from it. I wrote the code for this; however, I ran into problems when I tried to convert the pixels values into temperatures. The pixels values are 3 values just like the pixel values in a normal colored image. I tried to convert those values into one temperature value but couldn’t find a way to do that. According to Bill’s graduate student, the pixel values are not static. This means that we can’t get the temperature values from them. Luckily, we were able to use the CSV files that the camera produces. The CSV files hold the temperatures for each pixel. We used those in our code to get the temperature values of each pixel.  Our code takes the CSV values and enters them into a list. Then, the code creates a histogram from those values. 
+
+
+Since we ran into many problems with the camera (I will elaborate on that later), we didn’t manage to get a lot done. We were only able to write code that wasn’t affected by bad temperature reads from the camera. 
+
+\subsection{describes what you have left to do}
+
+The first thing that we must do is writing code to import images from the camera. Since it took us a while to get the camera, we left this part to the end of the image processing. We met with Bill’s graduate student this week and he gave us a general explanation on how to do this. We will have to write C++ code that will use the camera’s library to get the camera to take an image and import it into our code. We will have to integrate the C++ code into our python code or have a function that calls the C++ code. 
+
+For the program to know when it needs to take an image, the mechanical team is working on a specific sensor. The sensor will send a signal whenever a person is standing in the right spot. Once our program receives that signal it will make the camera take a picture. The mechanical team is still working on this sensor, so we can’t use it. What we will have in our code in the meantime is a process that takes a picture every time a key on the keyboard is pressed. 
+
+After finishing importing the images, we need to finish the pixels selection part. We are still waiting for the camera to be calibrated. Once it’s calibrated correctly, we will use new images to select a reasonable range of temperatures. When we’ll finally have that range, we will use it to select specific pixel temperature from the CSV file. 
+
+We have some code for pixels selection, but we need to make it better.  Right now, our code selects all the pixels that are in that specific range. We need to make sure that it will only select the values from the head. We know what the image will look like, so we can estimate where the head of the person will be. So, we will scan the image, top to bottom.  Once we reach pixel values that start to have human temperatures, we will take those pixel values and a specific number of rows that follow them. 
+
+This will work because all the heads in the images will look about the same. We can select the same number of rows and get a good estimate of the head.  Using this method, we will be able to only select the heads pixels values. It won’t be perfect, but our client Bill said this method will work for this project. We will write the code for the head selection soon but we can’t really specify the real temperature range until the camera is calibrated. 
+
+\subsection{problems and solutions}
+The main part of our project is the learning model. But we can’t really build a good model without good data. In the beginning, we thought that the image processing part will only take a few weeks to finish, but it turned out to be a bigger problem. 
+
+
+It started with an uncertainty about the camera, we didn’t even know if we are going to get it in time. It’s an \$11,000 camera and it took a while to get that budget approved. At the beginning of winter term, we received a few images to work with and a few CSV files but still didn’t get access to the camera. For a few weeks we worked on that image processing code, but we were stuck because we couldn’t take new images. We finally got access to the camera in week 4. 
+
+Once we got access to the camera, we ran into bigger problems. The camera actually returned wrong temperature values. When a human’s skin is about 35 degrees Celsius, the camera would return values as high as 60 degrees Celsius.  We tried many things to fix it. We checked if the error is constant, but it want’s.  We tried it with hot and cold reference points and it still didn’t help. We tried calibrating it with more images, which helped a little but not enough for the camera to be right. We spent about 3 weeks on this with little progress on the temperature readings. This week (which is week 6) we met with Bill and he told us that he will take care of it. He said that he will try to get it working by the weekend. We hope that it will fix all of the camera problems because we can’t really get a good model until we get good data from the camera.\cite{ClaudeTech}
+
+\subsection{images}
+
+
+\section{Model, Bianca}
+
+\subsection{briefly recaps the project purposes and goals}
+
+
+\subsection{describes where you are currently on the project}
+
+\subsection{describes what you have left to do}
+
+
+\subsection{problems and solutions}
+
+
+\subsection{images}
+
+\section{Brian}
+
+\subsection{briefly recaps the project purposes and goals}
+
+
+\subsection{describes where you are currently on the project}
+
+\subsection{describes what you have left to do}
+
+
+\subsection{problems and solutions}
+
+
+\subsection{images}
+
+
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{mybib}
+
+\end{document}
