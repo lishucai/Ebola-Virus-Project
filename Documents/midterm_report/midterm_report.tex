@@ -4,7 +4,7 @@
 \usepackage{url}
 \usepackage{caption}
 \usepackage{graphicx} 
-
+\graphicspath{ {images/} }
 
 \title{%
   Midterm Progress Report \\
@@ -36,13 +36,13 @@
 My part of the project is the image processing. I am responsible for getting the camera to take a picture and import that image into my code. Moreover, I am also responsible for processing the images and setting a range of temperature that the code uses. The goal of my part is to produce one temperature from the image and send it into the model part. 
 
 
-\subsection{describes where you are currently on the project}
+\subsection{Recap and Goals}
 Currently, in the image processing part, we are halfway done. We have the code that takes an image or csv files and processes those files. For the tiff image files, we find the head and get the pixels values from it. I wrote the code for this; however, I ran into problems when I tried to convert the pixels values into temperatures. The pixels values are 3 values just like the pixel values in a normal colored image. I tried to convert those values into one temperature value but couldn’t find a way to do that. According to Bill’s graduate student, the pixel values are not static. This means that we can’t get the temperature values from them. Luckily, we were able to use the CSV files that the camera produces. The CSV files hold the temperatures for each pixel. We used those in our code to get the temperature values of each pixel.  Our code takes the CSV values and enters them into a list. Then, the code creates a histogram from those values. 
 
 
 Since we ran into many problems with the camera (I will elaborate on that later), we didn’t manage to get a lot done. We were only able to write code that wasn’t affected by bad temperature reads from the camera. 
 
-\subsection{describes what you have left to do}
+\subsection{Remaining Work}
 
 The first thing that we must do is writing code to import images from the camera. Since it took us a while to get the camera, we left this part to the end of the image processing. We met with Bill’s graduate student this week and he gave us a general explanation on how to do this. We will have to write C++ code that will use the camera’s library to get the camera to take an image and import it into our code. We will have to integrate the C++ code into our python code or have a function that calls the C++ code. 
 
@@ -54,7 +54,7 @@ We have some code for pixels selection, but we need to make it better.  Right no
 
 This will work because all the heads in the images will look about the same. We can select the same number of rows and get a good estimate of the head.  Using this method, we will be able to only select the heads pixels values. It won’t be perfect, but our client Bill said this method will work for this project. We will write the code for the head selection soon but we can’t really specify the real temperature range until the camera is calibrated. 
 
-\subsection{problems and solutions}
+\subsection{Problems and Solutions}
 The main part of our project is the learning model. But we can’t really build a good model without good data. In the beginning, we thought that the image processing part will only take a few weeks to finish, but it turned out to be a bigger problem. 
 
 
@@ -62,38 +62,52 @@ It started with an uncertainty about the camera, we didn’t even know if we are
 
 Once we got access to the camera, we ran into bigger problems. The camera actually returned wrong temperature values. When a human’s skin is about 35 degrees Celsius, the camera would return values as high as 60 degrees Celsius.  We tried many things to fix it. We checked if the error is constant, but it want’s.  We tried it with hot and cold reference points and it still didn’t help. We tried calibrating it with more images, which helped a little but not enough for the camera to be right. We spent about 3 weeks on this with little progress on the temperature readings. This week (which is week 6) we met with Bill and he told us that he will take care of it. He said that he will try to get it working by the weekend. We hope that it will fix all of the camera problems because we can’t really get a good model until we get good data from the camera.\cite{ClaudeTech}
 
-\subsection{images}
+\subsection{Images}
 
 
 \section{Model, Bianca}
 
-\subsection{briefly recaps the project purposes and goals}
+\subsection{Recap and Goals}
 
 
-\subsection{describes where you are currently on the project}
+\subsection{Current Progress}
 
-\subsection{describes what you have left to do}
-
-
-\subsection{problems and solutions}
+\subsection{Remaining Work}
 
 
-\subsection{images}
-
-\section{Brian}
-
-\subsection{briefly recaps the project purposes and goals}
+\subsection{Problems and Solutions}
 
 
-\subsection{describes where you are currently on the project}
+\subsection{Images}
 
-\subsection{describes what you have left to do}
+\section{Production Mode, Brian}
+
+\subsection{Recap and Goals}
+My part of the project is mostly the ending components and bringing the project together as a whole. I am responsible for the user interface, the production mode, and the evaluation. The production mode and the user interface both require having the all previous portions to be done to be created completely. However a simple skeleton can be created for each of these pieces, where the code for the image analysis and the model could be inserted. The evaluation is meant to determine how well the model is working and determining what threshold temperature should be used to determine what qualifies as a fever.
+
+\subsection{Current Progress}
+I have not started working on the production mode yet as it requires the previous portions of the project to be completed before this piece can be made. The production mode depends on the previous pieces of the project to be worked on and finished. This is the final working piece of the project. As a whole, it takes in a thermal images and then outputs an estimated temperature. Without the images analysis and the model this piece can not be finished.
+
+For the evaluation portion of the project I have created a small program that creates a Receiver operating characteristic curve that can show how well our model is doing. What it does is it plots the true positive value against the false positive value at all different thresholds to see at what threshold we need to use to minimize false positives, or maximize true positives. For this project however, we want to minimize false negative values so I need to change my program to plot false negative against true negatives. This should be an easy change as I simply need to adjust what data the program uses to plot.
+
+I have made very little progress in creating the user interface for the project. The plan for the user interface is to have it be in command line, and if we have time we could improve it to something more. So far the user interface is mostly in the image analysis portion, where you type in the program name and use command line arguments to select which images we want to use. The user interface will most likely be something similar to that, with maybe more options for different modes.
+
+\subsection{Remaining Work}
+We have the image analysis portion of this project complete, so I am able to fit that into the framework for the production mode when I finish it. We have still yet to make progress on the model portion of this project, but we are slowly figuring out how to progress. Our image analysis is complete, but we would like to test it against some thermal images. However, the thermal camera that is producing the images has some calibration issues, so we have recently been working on fixing the calibration on the camera increasing the amount of images that it calibrates on.
+
+A evaluation method is complete, however I need to check my program to see if it is actually plotting correctly, and check if my data generator is creating data correctly. I also plan to modify my data generator to have a certain correctness, so I can see if my ROC curve program is actually working. I am also planning on looking into different python libraries to see if there is something built into a library that I could check my program against. If there is a python library that generates an ROC curve I would consider using that instead of the one I wrote. I also plan on looking into more evaluation methods, so we are not just relying on one method.
+
+Currently the user interface that we have is built into the image analysis portion of this project. It is in command line and takes command line arguments. However, we have recently found out that the software the camera is written in uses C++ and we may have to use it to take images with our program. We made need to create something more complicated that uses bash commands to redirect the output from the camera software to our program.
+
+\subsection{Problems and Solutions}
+The production mode depends on the previous pieces of the project to be worked on and finished. This is the final working piece of the project.As a whole, it takes in a thermal images and then outputs an estimated temperature. Without the images analysis and the model this piece can not be finished. I have been thinking about creating a simple framework for this piece of the project. I would simply create a skeleton code where I could simply insert the other pieces of the code I need. I could create some fake data and a fake model for my framework to use, so that it is able to compile and run on it’s own. I just need to make sure that the inputs and outputs of each piece match with what they will actually be.
+
+For the ROC curve to work properly I need real data to feed into it. I also need a lot of data to have a good estimate of what the threshold needs to be. The curve I have created also seems to be plotting backwards, so I need to check if my conditions for true positive and false positives are switched. The ROC curve also needs data to plot, so I created a small program that creates a data for me. It creates a list of patients and have a real temperature, a measured temperature and says whether or not they actually have a fever. However this does generates completely random data so it is not an effective method for testing my ROC curve. What I plan on doing is modifying my data generator to produce a set of data that has some percentage of correctness. That way I could test if my ROC curve is actually working or not.
+
+The user interface does not really depend on the different portion of the project, but I would like to see how they all fit together before creating something. I want to avoid the problem of having created the user interface, and not having the correct type of inputs for the different pieces. The user interface works directly in conjunction with the production mode, so any progress on the production mode is also progress on the user interface. Both of these pieces depend on the other pieces to be completed, so this will be done towards the end.
 
 
-\subsection{problems and solutions}
-
-
-\subsection{images}
+\subsection{Images}
 
 
 
