@@ -9,7 +9,7 @@
   \vspace{0.4cm}
   \large Core Body Temperature Estimation to Detect Ebola Virus Disease \\
   \vspace{0.4cm}
-  \large CS 461, Fall 2017, Group 34\\
+  \large CS 462, Winter 2018, Group 34\\
     }
 \author{Claude Maimon, Brian Lee Huang, and Bianca Beauchamp}
 \date{\today}
@@ -18,23 +18,24 @@
 
 \maketitle
 
-\begin{abstract}
-
-\end{abstract}
-
 \newpage
 
 \tableofcontents
 \newpage
 
+\section{Introduction}
+
+Our project is being created for Bill Smart for doctors without borders. The idea behind it is to prevent the spread of Ebola by eliminating the need for doctors to check patients by hand, additionally potentially sick patients will be quarantined to potentially minimize the spread between sick and well patients.
+To do this we are using a thermal camera and look at the skin temperature. Then we are estimating core body temperature by creating a model and then determine whether or not the patient is symptomatic with a fever or not.
+
 
 \section{Image processing, Claude Maimon}
 
-\subsection{briefly recaps the project purposes and goals}
+\subsection{Recap and Goals}
 My part of the project is the image processing. I am responsible for getting the camera to take a picture and import that image into my code. Moreover, I am also responsible for processing the images and setting a range of temperature that the code uses. The goal of my part is to produce one temperature from the image and send it into the model part. 
 
 
-\subsection{Recap and Goals}
+\subsection{Current Progress}
 Currently, in the image processing part, we are halfway done. We have the code that takes an image or csv files and processes those files. For the tiff image files, we find the head and get the pixels values from it. I wrote the code for this; however, I ran into problems when I tried to convert the pixels values into temperatures. The pixels values are 3 values just like the pixel values in a normal colored image. I tried to convert those values into one temperature value but couldn’t find a way to do that. According to Bill’s graduate student, the pixel values are not static. This means that we can’t get the temperature values from them. Luckily, we were able to use the CSV files that the camera produces. The CSV files hold the temperatures for each pixel. We used those in our code to get the temperature values of each pixel.  Our code takes the CSV values and enters them into a list. Then, the code creates a histogram from those values. 
 
 
@@ -60,24 +61,32 @@ It started with an uncertainty about the camera, we didn’t even know if we are
 
 Once we got access to the camera, we ran into bigger problems. The camera actually returned wrong temperature values. When a human’s skin is about 35 degrees Celsius, the camera would return values as high as 60 degrees Celsius.  We tried many things to fix it. We checked if the error is constant, but it want’s.  We tried it with hot and cold reference points and it still didn’t help. We tried calibrating it with more images, which helped a little but not enough for the camera to be right. We spent about 3 weeks on this with little progress on the temperature readings. This week (which is week 6) we met with Bill and he told us that he will take care of it. He said that he will try to get it working by the weekend. We hope that it will fix all of the camera problems because we can’t really get a good model until we get good data from the camera.\cite{ClaudeTech}
 
-\subsection{Images}
 
-\section{Model, Bianca}
+\section{Model, Bianca Beauchamp}
 
 \subsection{Recap and Goals}
+		The skin temperature found from analyzing the pixels needs to be related to the measured core body temperature in order to produce an equation that represents the relationship between skin temperature and core body temperature. The skin temperature of a subject and the measured core body temperature of the same subject will be provided. These two pieces of data will be taken from many subjects and then used to create a model. The model will then be able to take just the summary statistics, which is the subjects estimated skin temperature, and produce the core body temperature. The model that will be used to start with is a linear regression. This was chosen as a starting point because it is the most basic model and complexity can be added if it is determined to be valuable.
+        Once the model has trained on the set of data that has both the subjects estimated skin temperature and their measured core temperature, it needs to be tested on a new set of data to determine how accurate the model is. This will be done by providing the model with only the estimated skin temperature and comparing the core temperature the model calculates to the measured core temperature. To quantify this comparison it is best to calculate the absolute error between the calculated core temperature and the measured core temperature. Absolute error is the best way to calculate the accuracy of the model because it averages the size of each error and weighs each error the same. This will need to be done for a large set of data to get a good idea of how well the model is working. \cite{BiancaTech}
+
 
 
 \subsection{Current Progress}
 
+In terms of creating the model I have done some research on how to code a linear regression model. This research ended up being very complicated and well beyond my realm of understanding. But since there was difficulty meeting with both the TA and the client at the beginning of the term, I had to try and understand it until I could get more guidance. Finally at a meeting with Bill I was able to ask him how I should go about creating the model. He sent me a link to a website of a python library called scikit-learn which has pre-made functions that create a linear regression for you. This was extremely helpful and I was able to read up on the library to understand how to properly use their functions. I have gotten started on this code and have it working where it will read in an array of fake skin temperature data and core temperature data from a file and output an equation to model the relationship between the two. I have tested my program by using the same data in excel to create a linear model and comparing the model that comes from my program to the one from excel to see how similar they are. At this point I am now waiting for real data from the camera to create a real model.
+
+For the model testing I started to write some code that will take in all of the estimated temperatures as well as all of the corresponding measured temperatures and then calculate the absolute error. Right now I am using fake data for the portion as well because I don't have a real model yet. Even though the model can’t be created and used yet due to the problem with the camera, I have started working on this code just to have it working so I don't have to worry about it later. Once the camera is working, data is collected and the model is created this code will be used and I will find out if our model is good or not. If it is not good I will have to go back and make changes to the model to make it better. 
+
+
+
 \subsection{Remaining Work}
 
+Once there is real data from the camera and a model is created it will need to be evaluated by the model testing program. If the model has a high absolute error then I know that it is not a good model. To improve the model the first step that I will take is to add information from reference temperature sources as well as from a possible humidity sensor if the mechanical team ends up getting it. This will be the first step to create a better model. If the absolute error is too high with this additional information then I will try a different type of model. It is hard to say for sure at this time what model I will try next but I am thinking of trying a polynomial regression since it has a bit more complexity. If I get to this point I will use the information I have learned as well as our client and TA to make the decision of which model to try next. This process will most likely be a long one of trial and error but I hope that I can find a model that will have a reasonable absolute error such as 40 percent or lower.
 
 \subsection{Problems and Solutions}
 
+The main problem I am facing right now is the lack of data. Our camera is having a hard time calibrating and because of this all of the temperatures it senses are much higher than they should be. This is a problem because I can not truly work on my portion of this project until the camera is working and I have the data. A consequence of this problem I am going to face is that I will be limited on time when it comes to fiddling with the model to make it as accurate as possible. I know that this process will take a long time and it is possible that I will not be able to get a high accuracy especially if the camera takes a long time to fix. To solve this problem, I will do as much research before hand so that I have a good idea of how to work with these models.
 
-\subsection{Images}
-
-\section{Production Mode, Brian}
+\section{Production Mode, Brian Huang}
 
 \subsection{Recap and Goals}
 My part of the project is mostly the ending components and bringing the project together as a whole. I am responsible for the user interface, the production mode, and the evaluation. The production mode and the user interface both require having the all previous portions to be done to be created completely. However a simple skeleton can be created for each of these pieces, where the code for the image analysis and the model could be inserted. The evaluation is meant to determine how well the model is working and determining what threshold temperature should be used to determine what qualifies as a fever.
@@ -104,9 +113,9 @@ For the ROC curve to work properly I need real data to feed into it. I also need
 The user interface does not really depend on the different portion of the project, but I would like to see how they all fit together before creating something. I want to avoid the problem of having created the user interface, and not having the correct type of inputs for the different pieces. The user interface works directly in conjunction with the production mode, so any progress on the production mode is also progress on the user interface. Both of these pieces depend on the other pieces to be completed, so this will be done towards the end.
 
 
-\subsection{Images}
+\section{Conclusion}
 
-
+This term good progress was made on the image processing software. However, there has been a major problem with the camera that has yet to be fixed. This camera being fixed is crucial to the success of the project. Another major issue was understanding how to come up with the mathematical model but this was resolved through communication. Since the rest of the project has been prepared, once the camera is fixed and data is collected it should be relatively straight forward to finish this project. If the camera can not be fixed in time and data can not be collected fake data may be used in order to have something to show at expo. However, the main goal is to have a functional prototype of the model by the end of this term.
 
 
 
