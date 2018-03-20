@@ -28,11 +28,59 @@ def starting_point(temperatureData):
                     return cordinates
     return []
 
-MYPATH = 'C:\Users\Tair\Documents\Pictures'
+def starting_point_bad_file(temperatureData):
+    for row_counter, elements in enumerate(temperatureData):
+        for column_counter, element in enumerate(elements):
+            if element < 50 and element > 30:
+                good = []
+                for iterator in range(1, 5):
+                    # print len(elements)
+                    if (column_counter + iterator) < len(elements):
+                        if elements[column_counter + iterator] < 50 and elements[column_counter + iterator] > 30:
+                            # print "added to good"
+                            good.append(iterator)
+                #print len(good)
+                if len(good) == 4:
+                    # print "in"
+                    cordinates = []
+                    cordinates.append(row_counter)
+                    cordinates.append(column_counter)
+                    return cordinates
+    return []
+
+
+def get_mean(x, y, WIDTH, HIGHT, temperatureData):
+    for row in range(y, (y + HIGHT)):
+        # y is the row it begains, h is the width of the length of the head
+        for column in range(x - (WIDTH / 2), x + (WIDTH / 2)):
+            if (temperatureData[row][column] > 43 or temperatureData[row][column] < 35):
+                continue
+            else:
+                good_range.append(temperatureData[row][column])
+
+    range_mean = sum(good_range) / float(len(good_range))
+    return range_mean
+
+
+def get_mean_bad_file(x, y, WIDTH, HIGHT, temperatureData):
+    for row in range(y, (y + HIGHT)):
+        # y is the row it begains, h is the width of the length of the head
+        for column in range(x - (WIDTH / 2), x + (WIDTH / 2)):
+            if (temperatureData[row][column] > 50 or temperatureData[row][column] < 30):
+                continue
+            else:
+                good_range.append(temperatureData[row][column])
+
+    range_mean = sum(good_range) / float(len(good_range))
+    return range_mean
+
+
+MYPATH = 'C:\Users\Tair\Documents\Pictures\Real\Running'
 FILES_NUM = 0
 HIGHT = 30
 WIDTH = 40
 DEBUG = 1
+FILE_IS_GOOD = 1
 y = 0
 x = 0
 csv_list = []
@@ -82,16 +130,11 @@ for c in csv_list:
     y = cordinates[0]
     x = cordinates[1]
 
+    if FILE_IS_GOOD:
+        range_mean = get_mean(x,y,WIDTH, HIGHT, temperatureData)
+    else:
+        range_mean = get_mean_bad_file(  x,y,WIDTH, HIGHT, temperatureData)
 
-    for row in range(y, (y + HIGHT)):
-        # y is the row it begains, h is the width of the length of the head
-        for column in range(x - (WIDTH / 2), x + (WIDTH / 2)):
-            if (temperatureData[row][column] > 43 or temperatureData[row][column] < 35):
-                continue
-            else:
-                good_range.append(temperatureData[row][column])
-
-    range_mean = sum(good_range) / float(len(good_range))
 
 
     if DEBUG:
