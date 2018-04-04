@@ -7,6 +7,26 @@ import sys
 #import matplotlib.pyplot as plt
 import csv
 
+def correcting_values(temperatureData):
+
+    min_value = 1000
+    for elements in temperatureData:
+        temp_min_value = min(elements)
+        if temp_min_value < min_value:
+            min_value = temp_min_value
+    #min_value = min(temperatureData)
+    if DEBUG:
+        print min_value
+    for row_counter, elements in enumerate(temperatureData):
+        for column_counter, element in enumerate(elements):
+            element = element - min_value
+            temperatureData[row_counter][column_counter] = element
+            #[float(i)-min_value for i in elements]
+            #print temperatureData[row][column]
+
+    return temperatureData
+
+
 
 def starting_point(temperatureData):
     for row_counter, elements in enumerate(temperatureData):
@@ -75,11 +95,13 @@ def get_mean_bad_file(x, y, WIDTH, HIGHT, temperatureData):
     return range_mean
 
 
-MYPATH = 'C:\Users\Tair\Documents\Pictures\Real\Running'
+#MYPATH = 'C:\Users\Tair\Documents\Pictures\Real\Running'
+#MYPATH = 'nfs/stak/users/maimonc/Ebola-Virus-Project/Code/Image_processing\Real\Running'
+MYPATH = './Real/resting' 
 FILES_NUM = 0
 HIGHT = 30
 WIDTH = 40
-DEBUG = 1
+DEBUG = 0
 FILE_IS_GOOD = 1
 y = 0
 x = 0
@@ -113,7 +135,7 @@ for c in csv_list:
                 else:
                     tempList.append(float(temp))
             temperatureData.append(tempList)
-
+    temperatureData = correcting_values(temperatureData)
     # print len(temperatureData[0])
     good_range = []
 
@@ -140,6 +162,9 @@ for c in csv_list:
     if DEBUG:
         print 'mean: %f range_mean %s' % (range_mean, c)
     else:
-        print '%0.2f %s' %(range_mean, c)
+       with open('resting.csv', 'a') as file:
+	     file.write(str(range_mean))
+	     file.write('\n')
+        #print '%0.2f %s' %(range_mean, c)
 
 
