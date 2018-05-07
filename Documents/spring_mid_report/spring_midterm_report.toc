@@ -8,10 +8,10 @@
 \contentsline {subsection}{\numberline {3.2}Current Progress}{4}
 \contentsline {subsection}{\numberline {3.3}Remaining Work}{5}
 \contentsline {subsection}{\numberline {3.4}Problems and Solutions}{5}
-\contentsline {section}{\numberline {4}Production Mode, Brian Huang}{6}
-\contentsline {subsection}{\numberline {4.1}Recap and Goals}{6}
+\contentsline {section}{\numberline {4}Production Mode, Brian Huang}{5}
+\contentsline {subsection}{\numberline {4.1}Recap and Goals}{5}
 \contentsline {subsection}{\numberline {4.2}Current Progress}{6}
 \contentsline {subsection}{\numberline {4.3}Remaining Work}{6}
-\contentsline {subsection}{\numberline {4.4}Problems and Solutions}{7}
+\contentsline {subsection}{\numberline {4.4}Problems and Solutions}{6}
 \contentsline {section}{\numberline {5}Conclusion}{7}
-\contentsline {section}{References}{8}
+\contentsline {section}{References}{7}
