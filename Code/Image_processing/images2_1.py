@@ -106,7 +106,10 @@ def get_mean_bad_file(x, y, WIDTH, HIGHT, temperatureData):
 
 if __name__ == '__main__':
 
-    MYPATH = 'C:\Users\Tair\Documents\Pictures\Files_bill'
+    print 'Number of arguments:', len(sys.argv), 'arguments.'
+    print 'Argument List:', str(sys.argv)
+    #MYPATH = 'C:\Users\Tair\Documents\Pictures\Files_bill'
+    MYPATH = str(sys.argv[1])
     FILES_NUM = 0
     HIGHT = 30
     WIDTH = 40
