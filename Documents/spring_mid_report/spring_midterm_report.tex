@@ -1,0 +1,128 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{caption}
+
+\title{%
+  Spring Midterm Progress Report \\
+  \vspace{0.4cm}
+  \large Core Body Temperature Estimation to Detect Ebola Virus Disease \\
+  \vspace{0.4cm}
+  \large CS 463, Spring 2018, Group 34\\
+    }
+\author{Claude Maimon, Brian Lee Huang, and Bianca Beauchamp}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+	The end goal of this project is to end up with a research paper. The paper should outline the problem that the project is trying to solve, the steps taken to solve the problem and how successfully we were
+	at solving the problem. The paper should also allow the project to be continued if someone chooses to. The whole process should be explained in detail allowing whoever wants to continue the
+	project to continue without any problem. The main body of this research paper will be about the program that we develop to predict a person's core body temperature. The program should first be able to
+	extract data from a thermal image. The data of the image should come from the top half, focusing on the head. It will then interpret the data to create a mathematical model that uses the temperature of a 
+	person's skin as data and analyzes that information and predicts what their core body temperature is. A high accuracy rate is not strictly required as that is not the point of the project, 
+	the goal of the is to determine if this method will be effective to detect whether a person is symptomatic with Ebola. A high accuracy rate is a good indicator that a mathematical model
+	is a good way to predict, where a low accuracy rate indicates that we should look for an alternative method.
+\end{abstract}
+
+
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+Our project is being created for Bill Smart for doctors without borders. The idea behind it is to prevent the spread of Ebola by eliminating the need for doctors to check patients by hand, additionally potentially sick patients will be quarantined to potentially minimize the spread between sick and well patients.
+To do this we are using a thermal camera and look at the skin temperature. Then we are estimating core body temperature by creating a model and then determine whether or not the patient is symptomatic with a fever or not.
+
+
+
+
+\section{Image processing, Claude Maimon}
+
+\subsection{Recap and Goals}
+My part of the project is the image processing. I am responsible for getting the camera to take a picture and import that image into my code. Moreover, I am also responsible for processing the images and setting a range of temperature that the code uses. The goal of my part is to produce one temperature from the image and send it into the model part. 
+
+
+
+\subsection{Current Progress}
+Overall the image processing part is done. The first thing that our code do is connect to the camera and make it take a picture on a key press. Bill’s graduate student Chris helped us with this code. On a key press, the code takes about 30 images of the person and selects 5 of them. We do that because the camera can produce garbage and we don’t want to use those frames. In order for this part to work the person has to be standing 2 meters away from the camera and his head must be under a specific height. 
+
+Right now we’re using a key press to take an image because the mechanical team didn’t install the movement sensors in the camera structure. In the future, a graduate student will implement those sensors into the code and the key press will not be required. 
+
+After taking the pictures our code transfer the images into CSV files. Each value in the CSV holds the temperature (in Celsius) of that specific pixel. After that our code finds the minimum value in the file and subtract that value from all the values in the CSV file. We do that to try and help with the camera calibration. After that, the code goes through the file values that are stored in an array and it calculates the mean values of the head temperatures. It does that by first finding the head. The way we find the head in the image is the following: we go through the values in the two dimensional array that holds the CSV values. Once we find 5 values in a row that are in the right range our code decides that that’s where the head begins. After finding the head the code finds the average of all the head values that are in the right range. The code then produces a mean value that will be used in the model. 
+
+
+\subsection{Problems and Solutions}
+We ran into many problems with the camera over this project. It started with an uncertainty about the camera, we didn’t even know if we are going to get it in time. It’s an \$11,000 camera and it took a while to get that budget approved. At the beginning of winter term, we received a few images to work with and a few CSV files but still didn’t get access to the camera. Once we got access to the camera we spent week trying to get it to work. The camera actually returned wrong temperature values when used. When a human’s skin is about 35 degrees Celsius, the camera would return values as high as 60 degrees Celsius. We tried many things to fix it. We checked if the error is constant, but it want’s. We tried it with hot and cold reference points and it still didn’t help. We tried calibrating it with more images, which helped a little but not enough for the camera to be right. We spent about 3 weeks on this with little progress on the temperature readings. At the end of winter term we worked with Bill’s graduate student Chris on calibrating the camera. He tried to calibrate it with his code but that also wasn’t sufficient. We found that the background of the images change all the time with no reason. Chris suggested that we’ll take the minimum value in the image and subtract it from all the values in the image. Doing so helped a little with the calibration of the camera but not in all case. 
+
+When Bill’s graduate student sent us some new images we found that the “subtructing the min value” approach doesn’t work on all images. In order to solve this we tried to normalize the values in the csv files but that approach didn’t help as well. We chose to stick with just subtracting the minimum values from the csv files. That’s the method that gave us best results so far.\cite{ClaudeTech}
+
+
+\section{Model, Bianca Beauchamp}
+
+\subsection{Recap and Goals}
+	The skin temperature found from analyzing the pixels needs to be related to the measured core body temperature in order to produce an equation that represents the relationship between skin temperature and core body temperature. The skin temperature of a subject and the measured core body temperature of the same subject will be provided. These two pieces of data will be taken from many subjects and then used to create a model. The model will then be able to take just the summary statistics, which is the subjects estimated skin temperature, and produce the core body temperature. The model that will be used to start with is a linear regression. This was chosen as a starting point because it is the most basic model and complexity can be added if it is determined to be valuable.
+	Once the model has trained on the set of data that has both the subjects estimated skin temperature and their measured core temperature, it needs to be tested on a new set of data to determine how accurate the model is. This will be done by providing the model with only the estimated skin temperature and comparing the core temperature the model calculates to the measured core temperature. To quantify this comparison it is best to calculate the absolute error between the calculated core temperature and the measured core temperature. Absolute error is the best way to calculate the accuracy of the model because it averages the size of each error and weighs each error the same. This will need to be done for a large set of data to get a good idea of how well the model is working. \cite{BiancaTech}
+	
+	
+
+
+\subsection{Current Progress}
+
+
+In terms of creating the model during Winter term, I did some research on how to code a linear regression model. This research ended up being very complicated and well beyond my realm of understanding. But since there was difficulty meeting with both the TA and the client at the beginning of Winter term, I had to try and understand it until I could get more guidance. Finally at a meeting with Bill I was able to ask him how I should go about creating the model. He sent me a link to a website of a python library called scikit-learn which has pre-made functions that create a linear regression for you. This was extremely helpful and I was able to read up on the library to understand how to properly use their functions. I then created some code that created an equation for the linear model and it worked. This term after discussing the model with Bill and asking him how it could be improved, he advised that I compare the linear regression to a Gaussian regression. To do this I just had to add one more function that was very similar to the linear regression function that already existed. 
+
+For the model testing during Winter term, I started to write some code that takes in all of the estimated temperatures as well as all of the corresponding measured temperatures and then calculate the absolute error. However, after starting to write some code to calculate the absolute error I discovered that finding the R squared value is a better way to determine the accuracy of the model. Then this term with the help of the client we decided to evaluate the SSE which is the sum of squared error as well as the LOOCV which is leave one out cross validation. This change has been implemented at this point. The model has been evaluated using these methods but the accuracy can not be fully established since the camera still has errors and our data set is so small.
+
+
+
+
+\subsection{Remaining Work}
+
+The model is as complete as possible since we were only able to collect very few data points for it to learn on. At this point I just need to clean up the user interface for the model code as well as clean up the code itself. This is important because I want it to be as usable as possible for the graduate students that will be taking over this project. 
+
+
+\subsection{Problems and Solutions}
+
+The camera is still not calibrating properly but we were able to get a few good data points to use to create the model. At this point we have everything ready for expo and everything works like it should except for the camera which is out of our control since even the professor and graduate students were unable to fix the camera. Since all of our code works properly we will be able to demo at expo but it won’t be very accurate due to the calibration issue with the camera. 
+
+
+\section{Production Mode, Brian Huang}
+
+\subsection{Recap and Goals}
+My part of the project is mostly the ending components and bringing the project together as a whole. I am responsible for the user interface, the production mode, and the evaluation. The production mode and the user interface both require having the all previous portions to be done to be created completely. The production mode is the end product we are making, where we take a picture with the thermal camera and it produces a predicted core body temperature. The evaluation is meant to determine how well the model is working and determining what threshold temperature should be used to determine what qualifies as a fever.
+\subsection{Current Progress}
+Now that all the pieces of the project are done, I have started creating the production mode. The production mode should not be too difficult to create as it is just putting all the pieces together. 
+For the evaluation portion of the project I have created a small program that creates a Receiver operating characteristic curve that can show how well our model is doing. What it does is it plots the true positive value against the false positive value at all different thresholds to see at what threshold we need to use to minimize false positives, or maximize true positives. For this project however, we want to minimize false negative values so I need to change my program to plot false negative against true negatives. This should be an easy change as I simply need to adjust what data the program uses to plot.
+
+I have made very little progress in creating the user interface for the project. The plan for the user interface is to have it be in command line, and if we have time we could improve it to something more. So far the user interface is mostly in the image analysis portion, where you type in the program name and use command line arguments to select which images we want to use. The user interface will most likely be something similar to that, with maybe more options for different modes. Since user interface and production mode are so closely related, working on the production mode means also working on the user interface. So as I slowly work on the production mode, work is also being done on the user interface.
+
+\subsection{Remaining Work}
+A evaluation method is complete, however I need to check my program to see if it is actually plotting correctly, and check if my data generator is creating data correctly. I also plan to modify my data generator to have a certain correctness, so I can see if my ROC curve program is actually working. I am also planning on looking into different python libraries to see if there is something built into a library that I could check my program against. If there is a python library that generates an ROC curve I would consider using that instead of the one I wrote. I also plan on looking into more evaluation methods, so we are not just relying on one method.
+
+Since all the pieces of the project are complete I can start working on the production mode. I have started and I am slowly working on it. It should not be too difficult to complete as it is just combining all the other pieces of the project into one file. However, I need to tweak the pieces to make everything a function call instead of it’s own main program. I also need to change these programs so each of them can take user input, rather than having files hard coded into it.
+
+\subsection{Problems and Solutions}
+
+For the ROC curve to work properly I need real data to feed into it. I also need a lot of data to have a good estimate of what the threshold needs to be. The curve I have created also seems to be plotting backwards, so I need to check if my conditions for true positive and false positives are switched. The ROC curve also needs data to plot, so I created a small program that creates a data for me. It creates a list of patients and have a real temperature, a measured temperature and says whether or not they actually have a fever. However this does generates completely random data so it is not an effective method for testing my ROC curve. What I plan on doing is modifying my data generator to produce a set of data that has some percentage of correctness. That way I could test if my ROC curve is actually working or not.
+
+Since all the pieces of the project are done I have started working on the production mode. However, I can’t simply combine them as I need to feed the output of one program as input to another. I need to put them all into one file and then modify them so they work properly. One issue I have been running into is that some of the programs have their own main, so I need to change that to make it a function call instead. That way I can have the production mode run, and call the other programs as function calls.
+
+\section{Conclusion}
+
+
+By now we are almost done with everything. This term we made a lot of progress with the model and the production mode. Our code runs and do all necessary things. It doesn’t work perfectly because of the camera calibration problems. We believe that with a calibrated camera our code could return good outcomes. We’ve collected and received data but it’s not enough. In order to really test our program we need to check and train it on images of people with fevers. Since we can’t get that kind of data right now, we can’t test it all the way. This is why a graduate student will continue this project after us. They will be able to collect more data to run the code on. 
+
+
+
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{mybib}
+
+\end{document}

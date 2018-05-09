@@ -1,0 +1,17 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Image processing, Claude Maimon}{3}
+\contentsline {subsection}{\numberline {2.1}Recap and Goals}{3}
+\contentsline {subsection}{\numberline {2.2}Current Progress}{3}
+\contentsline {subsection}{\numberline {2.3}Problems and Solutions}{3}
+\contentsline {section}{\numberline {3}Model, Bianca Beauchamp}{4}
+\contentsline {subsection}{\numberline {3.1}Recap and Goals}{4}
+\contentsline {subsection}{\numberline {3.2}Current Progress}{4}
+\contentsline {subsection}{\numberline {3.3}Remaining Work}{5}
+\contentsline {subsection}{\numberline {3.4}Problems and Solutions}{5}
+\contentsline {section}{\numberline {4}Production Mode, Brian Huang}{5}
+\contentsline {subsection}{\numberline {4.1}Recap and Goals}{5}
+\contentsline {subsection}{\numberline {4.2}Current Progress}{6}
+\contentsline {subsection}{\numberline {4.3}Remaining Work}{6}
+\contentsline {subsection}{\numberline {4.4}Problems and Solutions}{6}
+\contentsline {section}{\numberline {5}Conclusion}{7}
+\contentsline {section}{References}{7}
