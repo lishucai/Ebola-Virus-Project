@@ -72,12 +72,12 @@ def starting_point_bad_file(temperatureData):
 
 
 def get_mean(x, y, WIDTH, HEIGHT, temperatureData):
-    if ((y + HEIGHT) > 120):
+    if ((y + HEIGHT) > 120 or ((x + (WIDTH / 2)) > 160)):
         print "PERSON OUT OF RANGE"
         return 0
-    if ((x + (WIDTH / 2)) > 160):
-        print "PERSON OUT OF RANGE"
-        return 0
+    #if ((x + (WIDTH / 2)) > 160):
+    #    print "PERSON OUT OF RANGE"
+    #    return 0
     for row in range(y, (y + HEIGHT)):
         # y is the row it begains, h is the width of the length of the head
         for column in range(x - (WIDTH / 2), x + (WIDTH / 2)):
@@ -169,9 +169,6 @@ def processImages():
 
         if DEBUG:
             print 'row number is %d, column number is %d ' % (cordinates[0], cordinates[1])
-
-        # if(len(cordinates) == 0):
-        #	return 0
 
         y = cordinates[0]
         x = cordinates[1]
