@@ -43,7 +43,12 @@ def takeThermalImage(configFile):
 					thermalwriter.writerow(data_t[row])   
 
 if __name__ == "__main__":
-	if(sys.argv[1] == "-c"):
+	if(len(sys.argv) == 1):
+		print "Usage"
+		print "Create Model: python production.py -c <trainingData.txt>"
+		print "Take Image: python production.py config.xml <modelFile.txt>"
+	
+	elif(sys.argv[1] == "-c"):
 		trainingData = reader.spaceReader(sys.argv[2])
 		LeastSquares.generateModel(trainingData)
 	else:
@@ -58,8 +63,7 @@ if __name__ == "__main__":
 		imageMeans = images2.processImages()
 
 		if(0 in imageMeans):
-			return
-	
+			print "An error has occured. Try again."	
 		else:
 			#Getting the mean of all the means
 			totalMean = mean(imageMeans)
