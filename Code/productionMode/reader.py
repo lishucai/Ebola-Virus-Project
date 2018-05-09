@@ -1,7 +1,7 @@
 import os
 import sys
 
-def reader(fileName):
+def spaceReader(fileName):
 	masterList = list()
 	with open(fileName, 'r') as f:
 		lines = f.read().splitlines()
@@ -10,3 +10,7 @@ def reader(fileName):
 			masterList.append(dataPoint)
 	return masterList
 
+def commaReader(fileName):
+	with open(fileName, 'r') as f:
+		lines = f.read().split(',')
+	return lines
