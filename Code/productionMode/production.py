@@ -23,7 +23,8 @@ def takeThermalImage(configFile):
 	path = "./Images"
 	name = "image" 
 	with IrCamera(configFile) as ir_cam:
-
+	
+	#Take 40 frames worth of pictures, but only keep thae last 30. This is to get rid of the garbage frames that could be produced at the start.
 	    for i in range(40):
 		data_t, data_p = ir_cam.get_frame()
 		cv2.imshow('visual data', data_p)
@@ -43,14 +44,18 @@ def takeThermalImage(configFile):
 					thermalwriter.writerow(data_t[row])   
 
 if __name__ == "__main__":
+	#usage cases
 	if(len(sys.argv) == 1):
 		print "Usage"
 		print "Create Model: python production.py -c <trainingData.txt>"
 		print "Take Image: python production.py config.xml <modelFile.txt>"
 	
+	#Creating the model
 	elif(sys.argv[1] == "-c"):
 		trainingData = reader.spaceReader(sys.argv[2])
 		LeastSquares.generateModel(trainingData)
+
+	#Taking the picture and analyzing it.
 	else:
 		#The config files for the camera and the model.
 		config = sys.argv[1]
