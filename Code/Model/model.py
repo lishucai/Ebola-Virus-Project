@@ -1,53 +1,83 @@
-#!/usr/bin/python
-from numpy import array, newaxis
-from sklearn import datasets, linear_model
+#!/usr/bin/env python
 
-e = []
-m = []
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn.gaussian_process import GaussianProcess
+from sklearn.cross_validation import cross_val_predict
+from numpy import array, newaxis, concatenate
 
-with open("trainTemps.txt") as file:
-	for line in file:
-		temps = line.split()
-		e.append(float(temps[0]))
-		m.append(float(temps[1]))
 
-est = array(e)
-meas = array(m)
+def read_data(filename):
+	# Read in the training data, and get rid of the dupes
+	with open(filename, 'r') as f:
+		data = list(set([tuple(map(float, line.split())) for line in f]))
 
-est = est[:, newaxis]
+	thermal = [t for t,c in data]
+	core = [c for t,c in data]
 
-lin = linear_model.LinearRegression()
+	thermal = array(thermal)[:, newaxis]
+	core = array(core)
 
-lin.fit(est, meas)
+	return thermal, core
 
-print("The coefficient is {}".format(lin.coef_[0]))
-print("The intercept is {}".format(lin.intercept_))
 
-x = []
-y = []
+def fit_linear_model(thermal, core):
+	model = LinearRegression(normalize=True)
+	model.fit(thermal, core)
 
-with open("testTemps.txt") as file:
-	for line in file:
-		temps = line.split()
-		x.append(float(temps[0]))
-		y.append(float(temps[1]))
+	return model
 
-x = array(x)
-y = array(y)
 
-x = x[:, newaxis]
+def fit_gaussian_model(thermal, core):
+	model = GaussianProcess()
+	model.fit(thermal, core)
 
-print ("The R squared value is {}".format(lin.score(x, y)))
+	return model
 
-t = []
 
-with open("temps.txt") as file:
-	for line in file:
-		temps = line.split()
-		t.append(float(temps[0]))
+def evaluate(model, thermal, core):
+	'''
+	Calculate the sum squared error for a predictive model.
+	'''
+	guess = model.predict(thermal)
+	return sum([(a - b) ** 2 for a,b in zip(guess, core)])	
 
-t = array(t)
 
-t = t[newaxis, :]
+def loocv(model, thermal, core):
+	guess = cross_val_predict(model, thermal, core, cv=len(thermal))
+	return sum([(a - b) ** 2 for a,b in zip(guess, core)])	
 
-print ("The predicted temperature is {}".format(lin.predict(t)))
+
+def graph(model, thermal, core):
+	'''
+	Graph a predictive model.
+	'''
+	guess = model.predict(thermal)
+	plt.scatter(thermal, core, color='black')
+	plt.plot(thermal, guess, color='blue', linewidth=3)
+	plt.title("Skin Temperature vs. Core Temperatue")
+	plt.xlabel("Skin Temperature")
+	plt.ylabel("Core Temperature")
+	plt.grid()
+	plt.show()
+	return
+
+
+if __name__ == '__main__':
+
+	filename = raw_input('Enter the name of the file that contains the data (it must be in the same directory as this program): ')
+
+	thermal, core = read_data(filename)
+
+	print 'Linear:'
+	model = fit_linear_model(thermal, core)
+	print '    SSE:', evaluate(model, thermal, core)
+	print '  LOOCV:', loocv(model, thermal, core)
+	graph(model, thermal, core)
+
+	print 'Gaussian:'
+	model = fit_gaussian_model(thermal, core)
+	print evaluate(model, thermal, core)
+	print '    SSE:', evaluate(model, thermal, core)
+	print '  LOOCV:', loocv(model, thermal, core)
+	graph(model, thermal, core)
