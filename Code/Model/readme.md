@@ -1,6 +1,7 @@
 ## model.py
 
-This program creates both a linear regression model and a gaussian model using the data from a text file provided by the user. It also calculates the sum squared error, calculates leave one out cross validation and graphs both models.
+This program creates both a linear regression model and a gaussian model using the data from a text file provided by the user. It also calculates the sum squared error, calculates leave one out cross validation and graphs both models. When this program is run the only input it takes is the name of the file that contains all of the data (see allTemps.txt) and then it outputs the sum squared error, leave one out cross validation and graphs for both modles. 
+
 *NOTE* This program produces many warnings. This is because our client requested that we use some libraries that are outdated and therefore produce warnings when used. 
 
 ## allTemps.txt
