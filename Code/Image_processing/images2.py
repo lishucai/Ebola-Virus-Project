@@ -55,27 +55,6 @@ def starting_point(temperatureData):
                     return cordinates
     return []
 
-#this function does the same as the previous just with a differernt range in case the file is bad.
-
-def starting_point_bad_file(temperatureData):
-    for row_counter, elements in enumerate(temperatureData):
-        for column_counter, element in enumerate(elements):
-            if element < 50 and element > 30:
-                good = []
-                for iterator in range(1, 5):
-                    # print len(elements)
-                    if (column_counter + iterator) < len(elements):
-                        if elements[column_counter + iterator] < 50 and elements[column_counter + iterator] > 30:
-                            # print "added to good"
-                            good.append(iterator)
-                # print len(good)
-                if len(good) == 4:
-                    # print "in"
-                    cordinates = []
-                    cordinates.append(row_counter)
-                    cordinates.append(column_counter)
-                    return cordinates
-    return []
 
 
 #This function returns the mean of the head values.
@@ -86,30 +65,22 @@ def starting_point_bad_file(temperatureData):
 #temperatureData is the array with the temperature values
 
 def get_mean(x, y, WIDTH, HEIGHT, temperatureData):
+    if ((y + HEIGHT) > 120 or ((x + (WIDTH / 2)) > 160)):
+        print "PERSON OUT OF RANGE"
+        return 0
     for row in range(y, (y + HEIGHT)):
-        # y is the row it begains, h is the width of the length of the head
+        # y is the row it begins, h is the width of the length of the head
         for column in range(x - (WIDTH / 2), x + (WIDTH / 2)):
             if (temperatureData[row][column] > 43 or temperatureData[row][column] < 35):
                 continue
             else:
                 good_range.append(temperatureData[row][column])
-
+    if (len(good_range) == 0):
+        return 0
     range_mean = sum(good_range) / float(len(good_range))
     return range_mean
 
-#this function does the same as the previous just with a differernt range in case the file is bad.
 
-def get_mean_bad_file(x, y, WIDTH, HEIGHT, temperatureData):
-    for row in range(y, (y + HEIGHT)):
-        # y is the row it begains, h is the width of the length of the head
-        for column in range(x - (WIDTH / 2), x + (WIDTH / 2)):
-            if (temperatureData[row][column] > 50 or temperatureData[row][column] < 30):
-                continue
-            else:
-                good_range.append(temperatureData[row][column])
-
-    range_mean = sum(good_range) / float(len(good_range))
-    return range_mean
 
 if __name__ == '__main__':
     '''
@@ -136,10 +107,6 @@ if __name__ == '__main__':
     # set DEBUG to 1 to use specific DEBUG functionalities. It will have more print statments and will not print a
     # single number
     DEBUG = 0
-
-    #set this variable to 1. I set it to 0 when we took some images that we'rent in the right range. It increases the range when selecting
-    #the head pixels. See  starting_point_bad_file() get_mean_bad_file
-    FILE_IS_GOOD = 1
 
     #setting all nessesery parameters. x and y will hold the point where the head begins
     y = 0
@@ -199,16 +166,17 @@ if __name__ == '__main__':
 
         #if you set FILE_IS_GOOD to 1, it will use the normal get_mean. If you set it to 0 it would use the bad file get mean
         #which uses a different range.
-        if FILE_IS_GOOD:
-            range_mean = get_mean(x, y, WIDTH, HEIGHT, temperatureData)
-        else:
-            range_mean = get_mean_bad_file(x, y, WIDTH, HEIGHT, temperatureData)
+
+        range_mean = get_mean(x, y, WIDTH, HEIGHT, temperatureData)
+
 
         if DEBUG:
             print 'mean: %f range_mean %s' % (range_mean, c)
         else:
             #prints the calculated mean into a CSV file.
             with open('resting.csv', 'a') as file:
-                file.write(str(range_mean))
+                
+                file.write(str(range_mean) + "," + c )
+
                 file.write('\n')
             # print '%0.2f %s' %(range_mean, c)
