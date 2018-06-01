@@ -1,0 +1,44 @@
+\section*{Code}
+\subsection*{Overview Of The Code}
+Our code has two main modes. One is a learning mode and one is a production mode. In the learning mode, the images processing code and the model code are used separately. In the production mode, the separate pieces of code are used together to output an estimated temperature. 
+
+In the learning mode, the image processing code processes a folder of CSV files that were taken in advance. This mode is to be used when trying to collect data to train the model. While using this mode, the user should collect the actual temperature of the people that are being photographed. After running the image processing code on the CSV folder, the thermometer temperatures need to be added to the file that the code produces. Then, that file (that holds both the actual and estimated temperature) needs to be sent into the model to create a new model. 
+
+In the production mode, the whole process happens at the same time. The code can only run while the camera is connected to the computer and can only run on Linux environment. When running the code, the camera will take a few pictures in a row, our code will process them and produce an estimated core body temperature. 
+
+\subsection*{Image Processing}
+The image processing code is used to process an image CSV file and produce a temperature mean value. That value can later be sent to the model code to create a model. The code finds the head of the person in the image, calculates the mean of the head pixels and returns that value. This code doesn’t include the process of connecting to the camera and producing a CSV from the image. That code is available under the production mode. 
+
+\subsubsection*{Running the Program}
+\subsubsection*{Correcting Values}
+\subsubsection*{Finding the Person’s Head}
+\subsubsection*{Getting the Mean }
+\subsubsection*{Output}
+\subsection*{Mode}
+\subsubsection*{Our Model}
+\subsubsection*{Other possibility}
+
+\subsection*{Production Mode}
+\subsubsection*{Command Line}
+\subsubsection*{Testing}
+
+\section*{Problems and Solutions}
+
+\subsubsection*{Camera}
+\subsubsection*{Data}
+
+\section*{Results}
+\section*{Recommendations for Future}
+\subsection*{Model}
+We are currently using a least squares regression line for our model creation. This creates a simple linear line which produces a slope and intercept to correlate a person’s skin temperature to their estimated core body temperature. This simple method could be the best method, but we did not much data to create a more robust model.
+Multiple linear regression is the next logical step to test for the model. It can account for more variables that could possibly change someone’s core body temperature. Some of these variables could be the weather, the ambient temperature, and the humidity. 
+
+\subsection*{Camera}
+The camera must be calibrated correctly in order for this project to work. Currently, the code uses the default calibration. We were stuck on this problem through the whole project. We couldn't find a way to get the camera to work correctly. It also wasn't in our requirements to calibrate it. We think that a possible fix to the problem might be to take more pictures and videos with the camera, add to them their temperatures, and use those as calibration files. We weren't able to do this, but it might help increasing the accuracy of the camera.
+
+\subsection*{Data collection}
+\subsection*{Code Modifications}
+
+\section*{Conclusions}
+This project relies heavily on data. As mentioned in this report, we weren't able to collect good data. Both the camera problems and the nature of the needed data made it hard to achieve that goal. We believe that once the camera is fixed and enough data is collected, our code can be used to estimate a core body temperature of a person using a thermal image. There are some code modifications that need to be done. Also, new prediction models need to be tested. But more importantly, a lot of data needs to be collected for this project to succeed. 
+

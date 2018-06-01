@@ -1,0 +1,85 @@
+\begin{abstract}
+	The end goal of this project is to end up with a research paper. The paper should outline the problem that the project is trying to solve, the steps taken to solve the problem and how successfully we were
+	at solving the problem. The paper should also allow the project to be continued if someone chooses to. The whole process should be explained in detail allowing whoever wants to continue the
+	project to continue without any problem. The main body of this research paper will be about the program that we develop to predict a person's core body temperature. The program should first be able to
+	extract data from a thermal image. The data of the image should come from the top half, focusing on the head. It will then interpret the data to create a mathematical model that uses the temperature of a 
+	person's skin as data and analyzes that information and predicts what their core body temperature is. A high accuracy rate is not strictly required as that is not the point of the project, 
+	the goal of the is to determine if this method will be effective to detect whether a person is symptomatic with Ebola. A high accuracy rate is a good indicator that a mathematical model
+	is a good way to predict, where a low accuracy rate indicates that we should look for an alternative method.
+\end{abstract}
+
+\subsection*{Introduction}
+	\subsubsection*{Purpose}
+	In the medical industry it is known that one of the first signs of illness is an elevated core body temperature. Currently, the only way to get this temperature is with contact sensors which put health care workers at risk of infection if a patient is ill. This project will aim to solve this problem by creating a device that will be able to quickly take a person's core body temperature from a distance using only stand-off sensors.
+	\subsubsection*{Scope}
+	In Africa throughout the years there have been many different Ebola outbreaks. This project is part of a larger project that is trying to use robotics and automation to fight against Ebola. The National Institutes of Health are funding this project and we are also working with Medecins Sans Frontieres (Doctors Without Borders) in Brussels, Belgium who lead the response to the 2015-2017 Ebola outbreak. 
+	This project, if successful, will be part of an automated system that will sort people into two groups (symptomatic and asymptomatic) as they come in for care. This will lower the risk of health care workers and asymptomatic patients being exposed to Ebola. 
+	\subsubsection*{Definitions, Acronyms and Abbreviations}
+	OpenCV: an open source computer vision library.
+	
+	\subsubsection*{Overview}
+	We will be creating this automated system by using pictures from thermal imaging camera and analyzing them to estimate core body temperature. We are going to attempt to do this by taking an average temperature of the head of the person in the thermal image, taking their core body temperature with an ear thermometer and comparing the average temperature from the image to their actual core body temperature to build a mathematical model that will estimate core temperature from the thermal image temperature. To get the average temperature of the person’s head from the thermal image we plan to isolate the head from the thermal image, make the pixels of the image into data points on a graph, get rid of the outliers, and take the average of the rest of the data points. We will also be collaborating with the mechanical engineering team to create this automated system. The mechanical team will be providing us with a thermal imaging camera and the physical structure that will hold the camera.
+\subsection*{Overall Description}
+	\subsubsection*{Product Perspective}
+	Our program will be working with a thermal camera for the data collection. Our program will be working with a thermal camera for the data collection. We will also be using OpenCV for the image processing. Our program will also have a user interface that allows for easy data input. This user interface should be friendly enough where someone without an engineering background can easily use our program. 
+	\subsubsection*{Product Functions}
+	\subsubsection*{Processing Thermal Images}
+	We will create a program that will process data taken from a thermal camera image. The program will then isolate the person in the picture and only take data from the upper body of the person. In order to isolate the person, we will use a specific background or a door frame to cut only the person person from the image. Once the image is fully processed the pixels will be used as data points. The temperature value will depend on the color of the pixels and the program will analyze the data from all the pixels and process it. 
+	\subsubsection*{Processing Data from Pixels}
+	After isolating the head of a person from the image the pixels will be used as data points for our program. The temperature of each pixel will graphed, to create a histogram which we can analyze. The extreme outliers in the histogram will not be counted towards the analysis as those data points could come from the background. We will then analyze the data to get an estimation of the person’s temperature.
+	\subsubsection*{Collecting Data}
+	To collect data we will use a thermal camera to take the temperature of their skin, mainly focusing on their head and neck. Every person that has their picture taken will also have their real core temperature checked through the ear. The two pieces of data will then be stored for the program to analyze.
+	\subsubsection*{Analysing Data from Thermal Image}
+	Once we’ve collected enough data, we will statistically analyze it different ways. We will then look for the best statistical analysis that best connects the collected ear temperature to the predicted processed temperature from the thermal image. The statistical analysis will then be used as a baseline for a mathematical model to predict a person’s core body temperature.
+	\subsubsection*{Mathematical Model}
+	The data collected from the analysis will then be used to feed into a the mathematical model that predicts core body temperature. The accuracy of the model will improve over time as more data is fed into it.
+\subsection*{User Characteristics}
+	Our program should require no background knowledge in engineering to use. The usage of our program should be as simple as walking through a doorway and having a simple yes or no output to a screen. The hope of this project is to have it be deployed in areas where there is an Ebola outbreak. For this to be effectively deployed an expert should not be required to use it.
+\subsection*{Constraints}
+	\subsubsection*{Working with the Mechanical Team}
+	For this project, we will be partnering up with a mechanical engineering team. Our project progress would be highly affected by the team’s input. The mechanical team will be responsible for working with the camera and building the sensors set up. Our progress might be affected by the other team’s progress.
+	\subsubsection*{Getting People to be Checked}
+	Getting data will involve participants. We will need to check people for their temperatures. Participants can be people from our class but not other people. This constraint might make it harder to get sufficient data collection to create a comprehensive model.
+	\subsubsection*{Specific Data Needed}
+	In order for this project to work, we need to collect data from people. The data would be a set of ear temperature and a thermal image of a person.For the project to work, we need enough data from all spectrums. This means that we need to get data from people with different core body temperatures. We need to collect data from people with high and low core body temperatures. This mean people will either have to have a fevers or they would have to elevate their body temperature by exercise. This constraint will make it harder to collect large sets of data.
+	\subsubsection*{Limitations of the Camera}
+	The accuracy of the camera will reflect on the research’s results. If the camera is not accurate, the model will not be accurate. We might end up spending a lot of time creating an insufficient model.
+\subsection*{Assumptions and Dependencies}
+\begin{center}
+	\begin{landscape}
+		\begin{ganttchart}[
+			vgrid,
+			x unit=0.75cm,
+			y unit chart=1cm,
+			hgrid style/.style=red
+			]{24}{24}
+			\gantttitle{Ebola Virus Project Process}{24} \\
+			\ganttbar{Processing thermal image}{1}{2} \\
+			\ganttbar{Process data from pixels}{3}{5} \\
+			\ganttbar{Collecting Data}{1}{5} \\
+			\ganttbar{Analyzing data}{7}{10} \\
+			\ganttbar{Mathematical model}{11}{14} \\
+			\ganttbar{Program for graduate students}{15}{17} \\
+			\ganttbar{Testing and result analyzing}{18}{19} \\
+			\\[grid]
+			\ganttbar{Stretch goals}{19}{20} \\
+			\ganttlink{elem0}{elem1}
+			\ganttlink{elem1}{elem3}
+			\ganttlink{elem2}{elem3}
+			\ganttlink{elem3}{elem4}
+			\ganttlink{elem4}{elem5}
+			\ganttlink{elem5}{elem6}
+			\ganttlink{elem6}{elem7}
+		\end{ganttchart}
+	\end{landscape}
+\end{center}
+\subsection*{Specific requirements}
+
+Our program will be able to take a thermal image and perform pixels selection. After that, the program will analyze the pixels in the image and produce an average temperature of the skin.The program will then run the observed skin temperature calculated from the camera through a mathematical model that will produce an estimated core body temperature. 
+
+The whole process will take less than one minute and will no have more than more than 40\% of false negative results. In the end of the process, the program should provide a simple yes or no to whether or not the person's core body temperature is elevated.
+
+
+\subsection*{Stretch Goals}
+
+We will go out and collect data to feed into the model, and make it able to predict more accurately.If we will achieve our baseline of 40\% accuracy\cite{OtherResearch} early, we will work to lower the percentage of the false negative. 
