@@ -49,10 +49,10 @@ def starting_point(temperatureData):
                 # print len(good)
                 if len(good) == 4:
                     # print "in"
-                    cordinates = []
-                    cordinates.append(row_counter)
-                    cordinates.append(column_counter)
-                    return cordinates
+                    coordinates = []
+                    coordinates.append(row_counter)
+                    coordinates.append(column_counter)
+                    return coordinates
     return []
 
 
@@ -175,7 +175,7 @@ if __name__ == '__main__':
         else:
             #prints the calculated mean into a CSV file.
             with open('resting.csv', 'a') as file:
-                
+
                 file.write(str(range_mean) + "," + c )
 
                 file.write('\n')
