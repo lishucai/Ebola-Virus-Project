@@ -1,0 +1,128 @@
+\begin{abstract}
+Currently, to check for Ebola, doctors must use contact sensors such as thermometers to test for an elevated core body
+temperature in patients. This process is slow and can potentially lead to infection of staff members as well as other patients. This
+project will aim to create a device that will be able to quickly estimate a persons core body temperature from a distance using a
+thermal camera. To do this, we will process the images and then run the data through a model that will return an estimated core body
+temperature.
+\end{abstract}
+
+\section*{My Role in The Project}
+	I am responsible for the image processing part of the project. For our project, we are going to take pictures of people
+	using a FLIR thermal camera. We will use the images to determine peoples core body temperature. For my part, I will
+	import the images from the camera, isolating the head of a person from the image, and process the thermal information
+	out of the images pixels.
+
+\section*{What are you trying to accomplish}
+	We are trying to create a device that will minimize the exposure of staff and patients to the Ebola virus. To do so, we
+	are using thermal images to predict peoples core body temperature. People that arrive at the health center will walk
+	through the device which will screen their core body temperature. We will use a FLIR thermal image for this project. A
+	thermal camera can pick the approximate skin temperature, but there are many different factors that could increase a
+	person’s skin temperature. We will process images from the thermal camera and get an approximation of a persons skin
+	temperature. We will create a computational model that will use the data from the camera to determine a persons core
+	body temperature.
+
+\section*{IMPORTING THE IMAGE}
+	\subsection*{Overview}
+	The first step for image processing is importing the image from the camera. Its important that the image will stay in the
+	right format. The image needs to be in a format which maintains the temperature data.
+	\subsection*{Criteria}
+	The tool needs to work with our provided camera and sensors. It should be fast and should create the right image
+	format.
+	
+	\subsection*{Potential Choices}
+		\subsubsection*{Flir Tools}
+			FLIR Tools is a software for importing and analyzing images from FLIR cameras. The software can be used to import
+			images to a personal computer, search the image library using various filters, store search criteria and manipulate
+			images. The software is free to use and has a simple installation process. FLIR Tools is suitable for our FLIR A315
+			camera. Other than importing images the tool can be used to create PDF reports, add headers logos to images and sort
+			the image folder by specific variables
+		\subsubsection*{FLIR Tools+ Reporting Software}
+			The FLIR Tools+ software provides all the features FLIR Tools offers combined with extra features. It offers controls for
+			generating more comprehensive thermal imaging examinations and allows for better research reports. FLIR Tools+ also
+			allows for recording and playing of radiometric videos. It costs \$295 and offers all image import capabilities described
+			in the previous tool. It has an easy to use interface and is easy to install.
+		\subsubsection*{Copy Paste from driver}
+			The third option is to copy paste the images from the images from the camera drive to our personal computer.[4] This
+			option would be easy to do because weve all done that before. We will just open the camera drive on our computer
+			and copy the images to a specified folder on our computer. This approach might be slower because we will have to
+			transfer the images manually. Another downsize is that its easy to miss file when copying and pasting. The order of the
+			images might also change using this method. This option is free since it doesnt require additional programs to import
+			the images.
+	\subsection*{Discussion}
+		All three options would work with our camera. They are all straightforward and are easy to use. For price comparison,
+		FLIR Tools+ is much more expensive than the other two options, since they are offered for free. Both FLIR Tools and
+		FLIR Tools+ offer more capabilities and better interfaces than the copy paste option; however, FLIR Tools offers all the
+		features we need to transfer images from the camera. The FLIR Tools+ extra features are not an interest for our use case.
+	\subsection*{Conclusion}
+		We will use the FLIR Tools software to transfer files from our FLIR A315 camera to our computer. This is the best option
+		for us because its free and it offers all the features we need for this process. Even though FLIR Tools+ offers more
+		features, we dont need them. By using the free option, we will make the project cheaper and still get all the capabilities
+		we need to transfer the files.
+\section*{MANIPULATING THE IMAGE}
+	\subsection*{Overview}
+		The image imported from the camera would be an image of a person’s full body. For our analyzing, we will only need
+		the persons head part of the image. We will manipulate the image to cut the person from the background and cut the
+		head of the person from the image as well. The final product should be a head-image of a person with no background
+		to it.
+	\subsection*{Critera}
+		The tool should be free or cheap to purchase. It should be well documented and easy to learn. The bigger the community
+		of users for the software, the better. It will be easier to use a tool that other people use.
+	\subsection*{Potential Choices}
+	\subsection*{OpenCV with Python}
+		OpenCV (Open Source Computer Vision Library) is a free open source computer vision software. It has interfaces for
+		C++, C, Python, and Java and it supports various operating systems[5]. OpenCVs library has more than 2500 algorithms
+		which offer many features. Some of those features are facial recognition, gesture recognition, motion understanding,
+		biomedical analysis and more. The software is used all around the world and has a strong user community and offers
+		technical support. OpenCV is also known by our client so we will have access to people that know how to work with
+		it. 
+	\subsection*{VLFeat}
+		The VLFeat is a free open source library for vision algorithms.[6] It offers algorithms for image processing in a simple
+		and portable package. It includes implementations for common building blocks such as feature detectors, k-means
+		clustering, and super-pixelization. VLFeat is fully documentations and offers usages examples to many algorithms. It
+		has a high-quality implementation and is good for computer vision researchers and students. It has no external software
+		dependencies and is accessible by a MATLAB interface. There is also a command line interface offered. The library is
+		written in C and is free to download.
+	\subsection*{MATLAB Image Processing Toolbox}
+		MATLAB is a high-level language for technical computing. It integrates computation with an easy to use interface. It
+		offers libraries for mathematics, algorithm development, graphics and more. Most importantly for our use case, it offers
+		an Image Processing Toolbox. The toolbox offers algorithms and workflow for image processing, imaging analyzing and
+		algorithm development. It is free and easy to use.
+	\subsection*{Discussion}
+		All three options offer the capabilities we need to manipulate our images. MATLAB would be the easiest to use with
+		an easy programing language and easy to use interface which will lead to easy debugging.[9] However, MATLAB is
+		much slower than the VLfeat and OpenCV.[10] In fact, OpenCV is also faster than VLfeat but for our implementation,
+		both will be fast enough as this the difference will not be obvious in our implementation. MATLAB commercial use
+		(not needed now but might be needed in the future) 1500 euros. It is much more expensive than the other two options
+		as those options are free. Both also have a lot of users, so it will be easy to find solutions or assistance if we run into
+		problems. Moreover, if we choose to use OpenCV, our client and his TAs would be able to assist us as they have previous
+		knowledge and experience with OpenCV.
+	\subsection*{Conclusion}	
+		For this part of the project, we will use OpenCV. It is free and has a large users community. It has shown to have best
+		performances and it has many easy to understand tutorials available. Moreover, our client suggested that we will use it
+		so he or his TAs could help us with the process.
+\section*{ANALYZING IMAGES PIXELS}
+	\subsection*{Overview}
+	The last step for image processing would be extracting the images pixels. In the thermal image from the thermal camera
+	each pixel is holding a temperature value. We need to extract that value for each pixel in the image.
+	\subsection*{Criteria}
+	The program should be able to extract all pixels information from the image and should work with our image type. It
+	should should be as cheap as possible.
+	\subsection*{Potential Choices}
+	\subsection*{FLIR ResearchIR Software}
+		ResearchIR is a thermal analysis software by FLIR. It is easy and free to use. The software can be connected to a FLIR
+		thermal camera and process images in real-time. It offers image analysis tools, image file explorer, high-resolution image
+		scaling and temporal plots. Its easy to extract pixels data from an image using ResearchIR.
+	\subsection*{MATLAB}
+	MATLAB, as described previously, is a high-level programming language and an easy to use interface. It can be used for
+	thermal analysis of FLIR cameras images. MATLAB can be used for interfacing with thermal imaging devices, analyzing
+	thermal images and objects detection. It is free to use but has a high cost for commercial use.
+	\subsection*{FLIR WebViewer}
+	FLIRWeb Viewer is an online tool for analyzing thermal images. It works with our camera and has an easy interface. It can be used for uploading images, manipulate measurement tool, get camera properties and more.
+	\subsection*{Discussion}
+	All three programs can be used for our purpose. ResearchIR is the fastest option out of the three. MATLAB offers more
+	features and analyzing algorithms than the other two options; however, ResearchIR offers all the features that we need
+	to process the image’s pixels. WebView offers a remote connection to the camera but we dont need that feature for our
+	project.
+	\subsection*{Conclusion}		
+	For analyzing images pixels, ResearchIR would be the easiest and most straightforward solution. Its free and connects
+	directly to the camera. It has support from FLIR costumer services and it offers all the features that our project requires.

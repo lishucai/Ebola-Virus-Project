@@ -1,24 +1,24 @@
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {2}Requirements Document}{2}
-\contentsline {subsection}{\numberline {2.1}old requirement}{2}
-\contentsline {subsection}{\numberline {2.2}new requirements}{7}
-\contentsline {subsection}{\numberline {2.3}final Gantt Chart}{7}
-\contentsline {section}{\numberline {3}Design Document}{7}
-\contentsline {subsection}{\numberline {3.1}original design document}{7}
-\contentsline {subsection}{\numberline {3.2}new design changes}{11}
-\contentsline {section}{\numberline {4}Tech Reviews}{12}
-\contentsline {subsection}{\numberline {4.1}Brian's Tech Review}{12}
-\contentsline {subsection}{\numberline {4.2}Claude's Tech Review}{15}
-\contentsline {subsection}{\numberline {4.3}Bianca's Tech Review}{16}
-\contentsline {section}{\numberline {5}Weekly Blog Posts}{19}
-\contentsline {subsection}{\numberline {5.1}Brian}{19}
-\contentsline {subsection}{\numberline {5.2}Claude}{21}
-\contentsline {subsection}{\numberline {5.3}Bianca}{22}
-\contentsline {section}{\numberline {6}Final Poster}{23}
-\contentsline {section}{\numberline {7}Project Documentation}{25}
-\contentsline {section}{\numberline {8}Recommended Technical Resources}{27}
-\contentsline {section}{\numberline {9}Conclusions and Reflections}{27}
-\contentsline {section}{\numberline {10}Appendix 1}{27}
-\contentsline {section}{\numberline {11}Appendix 2}{27}
-\contentsline {section}{\numberline {12}Conclusion}{27}
-\contentsline {section}{References}{27}
+\contentsline {subsection}{\numberline {2.1}Old Requirement Document}{2}
+\contentsline {subsection}{\numberline {2.2}New Requirements}{7}
+\contentsline {subsection}{\numberline {2.3}Final Gantt Chart}{7}
+\contentsline {section}{\numberline {3}Design Document}{9}
+\contentsline {subsection}{\numberline {3.1}Original Design Document}{9}
+\contentsline {subsection}{\numberline {3.2}New Design Changes}{13}
+\contentsline {section}{\numberline {4}Tech Reviews}{13}
+\contentsline {subsection}{\numberline {4.1}Brian's Tech Review}{13}
+\contentsline {subsection}{\numberline {4.2}Claude's Tech Review}{17}
+\contentsline {subsection}{\numberline {4.3}Bianca's Tech Review}{21}
+\contentsline {section}{\numberline {5}Weekly Blog Posts}{24}
+\contentsline {subsection}{\numberline {5.1}Brian}{24}
+\contentsline {subsection}{\numberline {5.2}Claude}{26}
+\contentsline {subsection}{\numberline {5.3}Bianca}{28}
+\contentsline {section}{\numberline {6}Final Poster}{30}
+\contentsline {section}{\numberline {7}Project Documentation}{31}
+\contentsline {section}{\numberline {8}Recommended Technical Resources}{39}
+\contentsline {section}{\numberline {9}Conclusions and Reflections}{39}
+\contentsline {section}{\numberline {10}Appendix 1}{39}
+\contentsline {section}{\numberline {11}Appendix 2}{39}
+\contentsline {section}{\numberline {12}Conclusion}{39}
+\contentsline {section}{References}{40}

@@ -64,50 +64,51 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\begin{titlepage}
-	\pagenumbering{gobble}
-	\begin{singlespace}
-		%\includegraphics[height=4cm]{coe_v_spot1}
-		\hfill 
-		% 4. If you have a logo, use this includegraphics command to put it on the coversheet.
-		%\includegraphics[height=4cm]{CompanyLogo}   
-		\par\vspace{.2in}
-		\centering
-		\scshape{
-			\huge CS Capstone \DocType \par
-			{\large\today}\par
-			\vspace{.5in}
-			\textbf{\Huge\CapstoneProjectName}\par
-			\vfill
-			{\large Prepared for}\par
-			\Huge \CapstoneSponsorCompany\par
-			\vspace{5pt}
-			{\large Prepared by }\par
-			Group\CapstoneTeamNumber\par
-			% 5. comment out the line below this one if you do not wish to name your team
-			\CapstoneTeamName\par 
-			\vspace{5pt}
-			{\Large
-				\NameSigPair{\GroupMemberOne}\par
-				\NameSigPair{\GroupMemberTwo}\par
-				\NameSigPair{\GroupMemberThree}\par
+	\begin{titlepage}
+		\pagenumbering{gobble}
+		\begin{singlespace}
+			%\includegraphics[height=4cm]{coe_v_spot1}
+			\hfill 
+			% 4. If you have a logo, use this includegraphics command to put it on the coversheet.
+			%\includegraphics[height=4cm]{CompanyLogo}   
+			\par\vspace{.2in}
+			\centering
+			\scshape{
+				\huge CS Capstone \DocType \par
+				{\large\today}\par
+				\vspace{.5in}
+				\textbf{\Huge\CapstoneProjectName}\par
+				\vfill
+				{\large Prepared for}\par
+				\Huge \CapstoneSponsorCompany\par
+				\vspace{5pt}
+				{\large Prepared by }\par
+				Group\CapstoneTeamNumber\par
+				% 5. comment out the line below this one if you do not wish to name your team
+				\CapstoneTeamName\par 
+				\vspace{5pt}
+				{\Large
+					\NameSigPair{\GroupMemberOne}\par
+					\NameSigPair{\GroupMemberTwo}\par
+					\NameSigPair{\GroupMemberThree}\par
+				}
+				\vspace{20pt}
 			}
-			\vspace{20pt}
-		}
-		\begin{abstract}
-			There are four major parts to this project, image processing, machine learning, production and evaluation. The image processing portion will import the thermal images from the camera, format the images, select necessary pixels, and summarize those pixels into a single temperature value. The machine learning portion of the project will create a mathematical model to represent the relationship between skin temperature and core body temperature and then test this model on different sets of data. The production portion will use the model that has been created to produce a estimated core body temperature from the estimated skin temperature and then produce a true or false output as to weather or not thatThere are four major parts to this project, image processing, machine learning, production and evaluation. The image processing portion will import the thermal images from the camera, format the images, select necessary pixels, and summarize those pixels into a single temperature value. The machine learning portion of the project will create a mathematical model to represent the relationship between skin temperature and core body temperature and then test this model on different sets of data. The production portion will use the model that has been created to produce a estimated core body temperature from the estimated skin temperature and then produce a true or false output as to weather or not that
-			
-		\end{abstract}     
-	\end{singlespace}
-\end{titlepage}
-\newpage
-\pagenumbering{arabic}
-\tableofcontents
+			\begin{abstract}
+				There are four major parts to this project, image processing, machine learning, production and evaluation. The image processing portion will import the thermal images from the camera, format the images, select necessary pixels, and summarize those pixels into a single temperature value. The machine learning portion of the project will create a mathematical model to represent the relationship between skin temperature and core body temperature and then test this model on different sets of data. The production portion will use the model that has been created to produce a estimated core body temperature from the estimated skin temperature and then produce a true or false output as to weather or not thatThere are four major parts to this project, image processing, machine learning, production and evaluation. The image processing portion will import the thermal images from the camera, format the images, select necessary pixels, and summarize those pixels into a single temperature value. The machine learning portion of the project will create a mathematical model to represent the relationship between skin temperature and core body temperature and then test this model on different sets of data. The production portion will use the model that has been created to produce a estimated core body temperature from the estimated skin temperature and then produce a true or false output as to weather or not that
+				
+			\end{abstract}  
+		   
+		\end{singlespace}
+	\end{titlepage}
+	\newpage
+	\pagenumbering{arabic}
+	\tableofcontents
 	% 7. uncomment this (if applicable). Consider adding a page break.
 	%\listoffigures
 	%\listoftables
 	\clearpage
-
+	
 	\section{Introduction}
 	
 	There are four major parts to this project, image processing, machine learning, production and evaluation. The image processing portion will import the thermal images from the camera, format the images, select necessary pixels, and summarize those pixels into a single temperature value. The machine learning portion of the project will create a mathematical model to represent the relationship between skin temperature and core body temperature and then test this model on different sets of data. The production portion will use the model that has been created to produce a estimated core body temperature from the estimated skin temperature and then produce a true or false output as to weather or not that subject has a fever. The evaluation portion will evaluate how accurate the true or false output of the production portion is. The machine learning, production and evaluation portions will have user interfaces. The first piece of the project that will be developed is be the image processing portion since both the learning, and production code rely on processing the thermal image to get a skin temperature. The second piece that will be worked on is the machine learning portion since the model needs to be created and tested before it goes into production. The third piece that will be done is the production portion and the forth piece that will be done is the evaluation portion.
@@ -129,46 +130,77 @@
 	
 	
 	\section{Requirements Document}
-		\subsection{old requirement}
-			\import{sections/}{requirments.tex}
-			
-		\subsection{new requirements}
-			add new changes
-		\subsection{final Gantt Chart}
-			add new chart
-		
-	
-		
-	\section{Design Document}
-		\subsection{original design document}
-			\import{sections/}{Design_Document.tex}
-		\subsection{new design changes}
-			add changes	
-		
-	\section{Tech Reviews}
-		\subsection{Brian's Tech Review}
-				\import{sections/}{Brian_Huang_Tech_Review.tex}
-		\subsection{Claude's Tech Review}
-				add my tech review
-		\subsection{Bianca's Tech Review}
-				\import{sections/}{Binaca_tech.tex}
+	\subsection{Old Requirement Document}
+	\import{sections/}{requirments.tex}
+	\subsection{New Requirements}
+	There were two main things that we changed in the requirement documents. The first was the 40\% success rate. From the initial research that we did, we found that some previous attempts of this approach produced about 40\% success rate. When we started the project we thought that we could achieve that success rate. However, as we'll discuss in this report, we ran into many problems with the camera. The camera wasn't calibrated right and it returned bad values. We tried many things to fix it even though it is not in our requirements to try and fix the camera. When first writing this document, we assumed the camera would be working correctly. Since that wasn't the case, we had a hard time collecting good data. That's why we took out the 40\% success rate goal. Our client, Bill Smart, agreed with this change. Another change that we made was producing a report and not a research paper as a final product with the code. Our client agreed that there is no need for a research paper. We just needed to produce a report that will help his graduate students in continuing this project. 
+	\subsection{Final Gantt Chart}
+	\begin{center}
+		\begin{landscape}
+			\begin{ganttchart}[
+				vgrid,
+				x unit=0.75cm,
+				y unit chart=1cm,
+				hgrid style/.style=red
+				]{24}{24}
+				\gantttitle{Ebola Virus Project Process}{24} \\
+				\ganttbar{Processing thermal image}{1}{5} \\
+				\ganttbar{Process data from pixels}{5}{12} \\
+				\ganttbar{Collecting Data}{12}{18} \\
+				\ganttbar{Analyzing data}{18}{20} \\
+				\ganttbar{Mathematical model}{11}{17} \\
+				\ganttbar{Testing and result analyzing}{18}{19} \\
+				\\[grid]
+				\ganttbar{Program for graduate students}{15}{17} \\
+				\ganttbar{Testing and result analyzing}{18}{19} \\
 				
+				\ganttbar{Stretch goals}{19}{20} \\
+				\ganttlink{elem0}{elem1}
+				\ganttlink{elem1}{elem3}
+				\ganttlink{elem2}{elem3}
+				\ganttlink{elem3}{elem4}
+				\ganttlink{elem4}{elem5}
+				\ganttlink{elem5}{elem6}
+				\ganttlink{elem6}{elem7}
+			\end{ganttchart}
+		\end{landscape}
+	\end{center}
+	
+	\section{Design Document}
+	\subsection{Original Design Document}
+	\import{sections/}{Design_Document.tex}
+	\subsection{New Design Changes}
+	add changes	
+	
+	\section{Tech Reviews}
+	\subsection{Brian's Tech Review}
+	\import{sections/}{Brian_Huang_Tech_Review.tex}
+	\subsection{Claude's Tech Review}
+	\import{sections/}{Claude_tech.tex}
+	\subsection{Bianca's Tech Review}
+	\import{sections/}{Binaca_tech.tex}
+	
 	\section{Weekly Blog Posts}
 	
-		\subsection{Brian}
-			\import{sections/}{Brian_weekly.tex}
-			
-		\subsection{Claude}
-			\import{sections/}{Claude_weekly.tex}
-			
-		\subsection{Bianca}
-			\import{sections/}{Bianca_weekly.tex}
-		
-	\section{Final Poster}
-		\includepdf[pages=-,pagecommand={},width=\textwidth]{Group34NewPost.pdf}
+	\subsection{Brian}
+	\import{sections/}{Brian_weekly.tex}
 	
+	\subsection{Claude}
+	\import{sections/}{Claude_weekly.tex}
+	
+	\subsection{Bianca}
+	\import{sections/}{Bianca_weekly.tex}
+	
+	\section{Final Poster}	
+		Our final poster as it was presented at the undergraduate engineeting expo. 	
+		\begin{figure}[!hb]
+			\centering
+			\includegraphics[width=\textwidth,  height=20cm]{Group34NewPost.eps}
+			\caption{Our final poster}
+		\end{figure}
+
 	\section{Project Documentation}
-		\import{sections/}{documentation.tex}
+	\import{sections/}{documentation.tex}
 	
 	\section{Recommended Technical Resources}
 	
@@ -177,17 +209,7 @@
 	\section{Appendix 2}
 	
 	
+	\bibliographystyle{IEEEtran}
+	\bibliography{mybib}
 	
-	
-		
-	\section{Conclusion}
-		
-		The goal of this project is to increase the safety of health care workers as well as the people coming to those workers for help. By taking a thermal image of the patient and using that data to predict their core body temperature, health care workers and healthy patients will not have to be within a close proximity to sick patients. To accomplish this task, thermal images will be taken, the images will be processed, a mathematical model will be made, the model will be tested, a production mode will be created and the production mode will be evaluated. 
-		
-		If successful, this project will create something that will be usable in the field for doctors without borders. If the accuracy is not high enough for use in the field, it will be handed over to graduate students to continue the project. Ultimately, if this project is successful and has accurate prediction rates it could reduce the spread of illnesses.
-		
-		
-\bibliographystyle{IEEEtran}
-\bibliography{mybib}
-
 \end{document}
