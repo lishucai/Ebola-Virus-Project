@@ -6,8 +6,8 @@
 \usepackage{setspace}
 \usepackage{url}
 \usepackage{import}
-\usepackage{pdfpages}
-\usepackage{caption}
+%\usepackage{pdfpages}
+%\usepackage{caption}
 \usepackage{geometry}
 \usepackage{listings}
 \usepackage{color}
@@ -95,12 +95,12 @@
 				\vspace{20pt}
 			}
 			\begin{abstract}
-				There are four major parts to this project, image processing, machine learning, production and evaluation. The image processing portion will import the thermal images from the camera, format the images, select necessary pixels, and summarize those pixels into a single temperature value. The machine learning portion of the project will create a mathematical model to represent the relationship between skin temperature and core body temperature and then test this model on different sets of data. The production portion will use the model that has been created to produce a estimated core body temperature from the estimated skin temperature and then produce a true or false output as to weather or not thatThere are four major parts to this project, image processing, machine learning, production and evaluation. The image processing portion will import the thermal images from the camera, format the images, select necessary pixels, and summarize those pixels into a single temperature value. The machine learning portion of the project will create a mathematical model to represent the relationship between skin temperature and core body temperature and then test this model on different sets of data. The production portion will use the model that has been created to produce a estimated core body temperature from the estimated skin temperature and then produce a true or false output as to weather or not that
-				
+				ADD ABSTRACT	
 			\end{abstract}  
 		   
 		\end{singlespace}
 	\end{titlepage}
+
 	\newpage
 	\pagenumbering{arabic}
 	\tableofcontents
@@ -110,8 +110,6 @@
 	\clearpage
 	
 	\section{Introduction}
-	
-	There are four major parts to this project, image processing, machine learning, production and evaluation. The image processing portion will import the thermal images from the camera, format the images, select necessary pixels, and summarize those pixels into a single temperature value. The machine learning portion of the project will create a mathematical model to represent the relationship between skin temperature and core body temperature and then test this model on different sets of data. The production portion will use the model that has been created to produce a estimated core body temperature from the estimated skin temperature and then produce a true or false output as to weather or not that subject has a fever. The evaluation portion will evaluate how accurate the true or false output of the production portion is. The machine learning, production and evaluation portions will have user interfaces. The first piece of the project that will be developed is be the image processing portion since both the learning, and production code rely on processing the thermal image to get a skin temperature. The second piece that will be worked on is the machine learning portion since the model needs to be created and tested before it goes into production. The third piece that will be done is the production portion and the forth piece that will be done is the evaluation portion.
 	
 	Who requested it?
 	
@@ -133,7 +131,7 @@
 	\subsection{Old Requirement Document}
 	\import{sections/}{requirments.tex}
 	\subsection{New Requirements}
-	There were two main things that we changed in the requirement documents. The first was the 40\% success rate. From the initial research that we did, we found that some previous attempts of this approach produced about 40\% success rate. When we started the project we thought that we could achieve that success rate. However, as we'll discuss in this report, we ran into many problems with the camera. The camera wasn't calibrated right and it returned bad values. We tried many things to fix it even though it is not in our requirements to try and fix the camera. When first writing this document, we assumed the camera would be working correctly. Since that wasn't the case, we had a hard time collecting good data. That's why we took out the 40\% success rate goal. Our client, Bill Smart, agreed with this change. Another change that we made was producing a report and not a research paper as a final product with the code. Our client agreed that there is no need for a research paper. We just needed to produce a report that will help his graduate students in continuing this project. 
+	There were two main things that we changed in the requirement documents. The first was the 40 percent success rate. From the initial research that we did, we found that some previous attempts of this approach produced about 40 percent success rate. When we started the project we thought that we could achieve that success rate. However, as we'll discuss in this report, we ran into many problems with the camera. The camera wasn't calibrated right and it returned bad values. We tried many things to fix it even though it is not in our requirements to try and fix the camera. When first writing this document, we assumed the camera would be working correctly. Since that wasn't the case, we had a hard time collecting good data. That's why we took out the 40 percent  success rate goal. Our client, Bill Smart, agreed with this change. Another change that we made was producing a report and not a research paper as a final product with the code. Our client agreed that there is no need for a research paper. We just needed to produce a report that will help his graduate students in continuing this project. 
 	\subsection{Final Gantt Chart}
 	\begin{center}
 		\begin{landscape}
@@ -167,10 +165,11 @@
 	\end{center}
 	
 	\section{Design Document}
+	
 	\subsection{Original Design Document}
 	\import{sections/}{Design_Document.tex}
 	\subsection{New Design Changes}
-	add changes	
+		The main change that we did in the design document is the same as the requirement change. We changed the final product from a research paper to a detailed report. Our client agreed that there is no need for a research paper. Instead, we produced a detailed report that can assist someone in continuing our project in the future. 
 	
 	\section{Tech Reviews}
 	\subsection{Brian's Tech Review}
@@ -192,10 +191,10 @@
 	\import{sections/}{Bianca_weekly.tex}
 	\newpage
 	\section{Final Poster}	
-		Our final poster as it was presented at the undergraduate engineeting expo. 	
+		Our final poster as it was presented at the Undergraduate Engineering Expo. 	
 		\begin{figure}[!hb]
 			\centering
-			\includegraphics[width=\textwidth,  height=20cm]{Group34NewPost.eps}
+			\includegraphics[width=\textwidth, height=20cm]{group34poster.eps}
 			\caption{Our final poster}
 		\end{figure}
 
@@ -205,6 +204,7 @@
 	\section{Recommended Technical Resources}
 	
 	\section{Conclusions and Reflections}
+	
 	\section{Appendix 1: Essential Code Listings}
 	%	\import{sections/}{Appendix_1.tex}
 	\section{Appendix 2}
