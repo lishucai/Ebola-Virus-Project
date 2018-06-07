@@ -111,22 +111,8 @@
 	
 	\section{Introduction}
 	
-	Who requested it?
-	
-	Why was it requested?
-	
-	What is its importance?
-	
-	Who was/were your client(s)?
-	
-	Who are the members of your team?
-	
-	What were their roles?
-	
-	What was the role of the client(s)? \(I.e., did they supervise only, or did 
-	they participate in doing development\)
-	
-	
+	This project was requested by Bill Smart, who is working with NIH and Doctors without borders. It was requested to try and use another method for checking patients for Ebola. A new method is important, as Ebola is transferred through bodily fluids, so the less contact doctors and other patients have with each other the less likely it will spread. The team that worked on this project were Claude Maimon, Bianca Beachamp, and Brian Huang. Claude was responsible for working on the image analysis, Bianca was responsible for working on the model creation and testing, and Brian was responsible for the final production mode and user interface. For this project our client was Bill Smart, we had weekly check ins with him and he would provide advice and troubleshooting. We also worked with several graduate students along with our TA Andrew Emmott.
+		
 	\section{Requirements Document}
 	\subsection{Old Requirement Document}
 	\import{sections/}{requirments.tex}
@@ -142,14 +128,14 @@
 				hgrid style/.style=red
 				]{24}{24}
 				\gantttitle{Ebola Virus Project Process}{24} \\
-				\ganttbar{Processing thermal image}{1}{5} \\
-				\ganttbar{Process data from pixels}{5}{12} \\
+				\ganttbar{Processing thermal image}{1}{15} \\
+				\ganttbar{Process data from pixels}{2}{15} \\
 				\ganttbar{Collecting Data}{12}{18} \\
-				\ganttbar{Analyzing data}{18}{20} \\
-				\ganttbar{Mathematical model}{11}{17} \\
+				\ganttbar{Analyzing data}{12}{13} \\
+				\ganttbar{Mathematical model}{13}{17} \\
 				\ganttbar{Testing and result analyzing}{18}{19} \\
-				\\[grid]
 				\ganttbar{Program for graduate students}{15}{17} \\
+				\\[grid]
 				\ganttbar{Testing and result analyzing}{18}{19} \\
 				
 				\ganttbar{Stretch goals}{19}{20} \\
@@ -205,9 +191,23 @@
 	
 	\section{Conclusions and Reflections}
 	
+	\subsection{Brian}
+	For this project I worked on the production mode, the user interface and the evaluation method. The production mode required the uses of a linux machine, so I learned how to install linux onto my computer. It was a lot of trial and error messing with the BIOS, but I finally got it to work. I also learned about the Receiver Operating Characteristic curve, what it does, what it looks for and how it works. This was used to create the evaluation method of the project. This piece is working, but it just needs data to be used. 
+	
+	After working on this project I learned that project work can be even more difficult than working alone, but if done correctly it can also be much easier. If the team communicates and cooperates with each other, the project can be done quickly and easily as there are more people thinking about the same problem, effectively doubling or tripling the problem solving power. However the key here is good communication and cooperation, if these are bad then the group work can become much more difficult than if worked on my a single person. The management of the project works exactly the same way, where communication and cooperation are extremely essential. Without communication one person ends up doing all of the work by themselves, where other group members may have been willing to share the load. Overall working in teams is definitely more difficult than working alone. It requires a lot of juggling of other group members workload and schedules. It becomes a balancing act of trying to keep everyone as happy as possible, as having a disgruntled team member can cause many problems.
+	
+	If I could do this whole project over again I would definitely start everything earlier than I did. Although everything got done on time, starting everything earlier would help reduce the stress we had over the three terms, as we would have more room to work on it. 
+	
+	\subsection{Claude}
+	
+	\subsection{Biance}
+	
+	
 	\section{Appendix 1: Essential Code Listings}
 	%	\import{sections/}{Appendix_1.tex}
 	\section{Appendix 2}
+	
+	\newpage
 	
 	
 	\bibliographystyle{IEEEtran}
