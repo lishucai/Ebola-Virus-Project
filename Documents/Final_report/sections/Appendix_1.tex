@@ -1,0 +1,116 @@
+\begin{lstlisting}[language=Python, caption=Correcting the values from the CSV file]
+	def correcting_values(temperatureData):
+	#setting initial values so everything would be smaller
+	min_value = 1000
+	#goes through the list to find the absolute minimum
+	for elements in temperatureData:
+		temp_min_value = min(elements)
+		if temp_min_value < min_value:
+			min_value = temp_min_value
+	# min_value = min(temperatureData)
+	if DEBUG:
+		print min_value
+	#subtract the minimum value from all values
+	for row_counter, elements in enumerate(temperatureData):
+		for column_counter, element in enumerate(elements):
+			element = element - min_value
+			temperatureData[row_counter][column_counter] = element
+			# [float(i)-min_value for i in elements]
+			# print temperatureData[row][column]
+	#returns the new list with changed values
+	return temperatureData
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, caption=Finding the persons head in the picture]
+def starting_point(temperatureData):
+for row_counter, elements in enumerate(temperatureData):
+for column_counter, element in enumerate(elements):
+if element < 45 and element > 30:
+good = []
+for iterator in range(1, 5):
+# print len(elements)
+if (column_counter + iterator) < len(elements):
+if elements[column_counter + iterator] < 45 and elements[column_counter + iterator] > 30:
+# print "added to good"
+good.append(iterator)
+# print len(good)
+if len(good) == 4:
+# print "in"
+coordinates = []
+coordinates.append(row_counter)
+coordinates.append(column_counter)
+return coordinates
+return []
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=Python, caption=Claculating the mean temperature value]
+def get_mean(x, y, WIDTH, HEIGHT, temperatureData):
+if ((y + HEIGHT) > 120 or ((x + (WIDTH / 2)) > 160)):
+print "PERSON OUT OF RANGE"
+return 0
+for row in range(y, (y + HEIGHT)):
+# y is the row it begins, h is the width of the length of the head
+for column in range(x - (WIDTH / 2), x + (WIDTH / 2)):
+if (temperatureData[row][column] > 43 or temperatureData[row][column] < 35):
+continue
+else:
+good_range.append(temperatureData[row][column])
+if (len(good_range) == 0):
+return 0
+range_mean = sum(good_range) / float(len(good_range))
+return range_mean
+\end{lstlisting}
+
+
+
+\begin{lstlisting}[language=Python, caption=Prodiction Mode]
+def takeThermalImage(configFile):
+path = "./Images"
+name = "image"
+with IrCamera(configFile) as ir_cam:
+
+for i in range(40):
+data_t, data_p = ir_cam.get_frame()
+cv2.imshow('visual data', data_p)
+print '----------------'
+print data_t
+print '----------------'
+cv2.waitKey(5)
+
+n_rows, n_cols = data_t.shape
+# print data_t[0]
+
+if (i > 10):
+filename = str(name + str(i) + ".csv")
+with open(os.path.join(path, filename), 'w') as csvfile:
+thermalwriter = csv.writer(csvfile)
+for row in range(n_rows):
+thermalwriter.writerow(data_t[row]) 
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=Python, caption=Taking an image and returning the mean]
+config = sys.argv[1]
+modelData = sys.argv[2]
+
+# Taking the image using the first config file.
+takeThermalImage(config)
+
+# Getting the means of all the files.
+imageMeans = images2.processImages()
+
+if (0 in imageMeans):
+print "An error has occurred. Try again."
+else:
+# Getting the mean of all the means
+totalMean = mean(imageMeans)
+
+# Running the total mean through the model.
+print "Raw Processed Temperature: ", totalMean
+print "Predicted Core Body Temperature: ", modelPredict(totalMean, modelData)
+
+print "DONE"
+\end{lstlisting}
+

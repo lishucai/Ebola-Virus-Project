@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.18)  7 JUN 2018 13:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.18)  10 JUN 2018 09:52
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -867,7 +867,23 @@ File: omsppl.fd
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <8.03> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 182.
  [39]
-[40] [41]) [42] [43] (./Final_report.bbl
+[40] [41])
+Overfull \hbox (31.36072pt too wide) in paragraph at lines 194--195
+[]\OT1/ppl/b/n/9.53561 Linear Re-gres-sion Tu-to-rial: $\OT1/ppl/m/n/9.53561 ht
+tp : / / scikit-[]learn . org / stable / modules / generated / sklearn . linear
+[]model . LinearRegression .
+ []
+
+
+Overfull \hbox (11.62689pt too wide) in paragraph at lines 196--197
+[]\OT1/ppl/b/n/9.53561 Python Lin-ear Re-gres-sion: $\OT1/ppl/m/n/9.53561 http 
+: / / bigdata-[]madesimple . com / how-[]to-[]run-[]linear-[]regression-[]in-[]
+python-[]scikit-[]learn/$ 
+ []
+
+[42] (./sections/Appendix_1.tex [43] [44] [45]) [46] (./sections/Appendix_2.tex
+File: csvImage.eps Graphic file (type eps)
+<csvImage.eps>) [47] (./Final_report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 68--71
 []\OT1/ppl/m/n/8.03 S. Ray, ``7 types of re-gres-sion tech-niques you should kn
 ow!'' $https : / / www . analyticsvidhya . com / blog / 2015 / 08 /
@@ -887,14 +903,14 @@ ium . com / human-[]in-[]a-[]machine-[]world / mae-[]and-[]rmse-[]which-[]metri
 c-[]is-[]better-[]e60ac3bde13d$,
  []
 
-) [44] (./Final_report.aux) ) 
+) [48] (./Final_report.aux) ) 
 Here is how much of TeX's memory you used:
- 13329 strings out of 495064
- 250497 string characters out of 3182224
- 436901 words of memory out of 3000000
- 16241 multiletter control sequences out of 15000+200000
+ 13331 strings out of 495064
+ 250540 string characters out of 3182224
+ 472697 words of memory out of 3000000
+ 16236 multiletter control sequences out of 15000+200000
  31249 words of font info for 78 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,7n,63p,1516b,1661s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,7n,63p,1516b,1663s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Final_report.dvi (45 pages, 252692 bytes).
+Output written on Final_report.dvi (49 pages, 301280 bytes).

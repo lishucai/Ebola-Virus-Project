@@ -28,7 +28,7 @@ The image processing code is used to process an image CSV file and produce a tem
 	
 	The following function, correcting\_values, demonstrate how we tried to help with the calibration problem. This function is simple, it finds the min value in the temperature Data list (that’s that list that holds the CSV values), and then it substructs that value from all the values in the list.  Since it’s a “two-dimensional” list, the code finds the minimum value of each inner list and compares it to the absolute minimum variable min\_value. Once the code finds the absolute minimum value, it iterates over the list and subtracts that value from every element of the list. Then, the code simply returns the modified list. 
 	
-\begin{lstlisting}[language=Python, caption=Python example]
+\begin{lstlisting}[language=Python, caption=Correcting Values]
 	def correcting_values(temperatureData):
 	#setting initial values so everything would be smaller
 	min_value = 1000
@@ -58,7 +58,7 @@ The image processing code is used to process an image CSV file and produce a tem
 	
 	The method to find the starting point is the following: the code goes through every inner list (every row) until it reaches an element that is in the right range (> 30 and <45). Then, the code checks if the next four elements in the list are also in the right range. If there are five values that are in the right range in a row, our code assumes that where the head begins. 
 	
-	\begin{lstlisting}[language=Python, caption=Python example]
+	\begin{lstlisting}[language=Python, caption=Finding the persons head in the picture]
 		def starting_point(temperatureData):
 			for row_counter, elements in enumerate(temperatureData):
 				for column_counter, element in enumerate(elements):
@@ -88,7 +88,7 @@ The image processing code is used to process an image CSV file and produce a tem
 	The code uses those values (40, 30) in the following way: It uses the starting point (from the last function) as the top of the head. However, since the head of a person is wider in the center of the face (as shown by the temperatures in the CSV file), we assumed that the top of the head is about the center of the head horizontally. This is why the code goes from y to y+Height vertical but from (x - width/2) to (x + width/2). 
 	
 	There might be better ways to extract the head from the picture. We used this method for simplicity and because we’re only using pixels that are in a specific range. That is, if we go too far from the head it doesn't matter because those values will probably be too cold and won’t be counted towards the mean. 
-	\begin{lstlisting}[language=Python, caption=Python example]
+	\begin{lstlisting}[language=Python, caption=Claculating the mean temperature value]
 	def get_mean(x, y, WIDTH, HEIGHT, temperatureData):
 		if ((y + HEIGHT) > 120 or ((x + (WIDTH / 2)) > 160)):
 			print "PERSON OUT OF RANGE"

@@ -17,10 +17,12 @@
 \contentsline {section}{\numberline {6}Final Poster}{33}
 \contentsline {section}{\numberline {7}Project Documentation}{34}
 \contentsline {section}{\numberline {8}Recommended Technical Resources}{42}
+\contentsline {subsection}{\numberline {8.1}Image Processing}{42}
+\contentsline {subsection}{\numberline {8.2}model}{42}
 \contentsline {section}{\numberline {9}Conclusions and Reflections}{42}
 \contentsline {subsection}{\numberline {9.1}Brian}{42}
 \contentsline {subsection}{\numberline {9.2}Claude}{43}
 \contentsline {subsection}{\numberline {9.3}Biance}{43}
 \contentsline {section}{\numberline {10}Appendix 1: Essential Code Listings}{43}
-\contentsline {section}{\numberline {11}Appendix 2}{43}
-\contentsline {section}{References}{44}
+\contentsline {section}{\numberline {11}Appendix 2}{47}
+\contentsline {section}{References}{48}
