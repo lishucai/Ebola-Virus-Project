@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.18)  10 JUN 2018 09:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2016.3.18)  12 JUN 2018 19:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -835,10 +835,10 @@ Missing character: There is no 4 in font nullfont!
 (./sections/Claude_tech.tex [16] [17] [18] [19]) (./sections/Binaca_tech.tex
 [20] [21] [22]) (./sections/Brian_weekly.tex [23] [24] [25] [26])
 (./sections/Claude_weekly.tex [27] [28] [29]) [30]
-(./sections/Bianca_weekly.tex [31]) [32]
+(./sections/Bianca_weekly.tex [31] [32] [33]) [34]
 File: group34poster.eps Graphic file (type eps)
  <group34poster.eps>
-(./sections/documentation.tex [33]
+(./sections/documentation.tex [35]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
@@ -849,7 +849,7 @@ File: omlppl.fd
 )
 LaTeX Font Info:    Font shape `OML/ppl/m/n' in size <8.03> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 19.
- [34]
+ [36]
 LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 46.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8.03> on input line 46.
@@ -857,8 +857,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5.62097> on input line 46.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <4.015> on input line 46.
- [35] [36]
-[37] [38]
+ [37] [38]
+[39] [40]
 LaTeX Font Info:    Try loading font information for OMS+ppl on input line 182.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsppl.fd
@@ -866,8 +866,8 @@ File: omsppl.fd
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <8.03> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 182.
- [39]
-[40] [41])
+ [41]
+[42] [43])
 Overfull \hbox (31.36072pt too wide) in paragraph at lines 194--195
 []\OT1/ppl/b/n/9.53561 Linear Re-gres-sion Tu-to-rial: $\OT1/ppl/m/n/9.53561 ht
 tp : / / scikit-[]learn . org / stable / modules / generated / sklearn . linear
@@ -881,9 +881,10 @@ Overfull \hbox (11.62689pt too wide) in paragraph at lines 196--197
 python-[]scikit-[]learn/$ 
  []
 
-[42] (./sections/Appendix_1.tex [43] [44] [45]) [46] (./sections/Appendix_2.tex
+[44] [45] [46] (./sections/Appendix_1.tex [47] [48]) [49]
+(./sections/Appendix_2.tex
 File: csvImage.eps Graphic file (type eps)
-<csvImage.eps>) [47] (./Final_report.bbl
+ <csvImage.eps>) [50] (./Final_report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 68--71
 []\OT1/ppl/m/n/8.03 S. Ray, ``7 types of re-gres-sion tech-niques you should kn
 ow!'' $https : / / www . analyticsvidhya . com / blog / 2015 / 08 /
@@ -903,14 +904,14 @@ ium . com / human-[]in-[]a-[]machine-[]world / mae-[]and-[]rmse-[]which-[]metri
 c-[]is-[]better-[]e60ac3bde13d$,
  []
 
-) [48] (./Final_report.aux) ) 
+) [51] (./Final_report.aux) ) 
 Here is how much of TeX's memory you used:
  13331 strings out of 495064
  250540 string characters out of 3182224
- 472697 words of memory out of 3000000
+ 465697 words of memory out of 3000000
  16236 multiletter control sequences out of 15000+200000
  31249 words of font info for 78 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  63i,7n,63p,1516b,1663s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Final_report.dvi (49 pages, 301280 bytes).
+Output written on Final_report.dvi (52 pages, 315604 bytes).
